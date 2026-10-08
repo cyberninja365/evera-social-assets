@@ -165,7 +165,7 @@ https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&u
 
 ### `02-plans-pricing-18.jpg` / `02-plans-pricing-18-ig.jpg`
 
-The dog counts on you. So do the kids and the computer everyone shares.
+Your kids, your parents, the computer everyone shares. We watch over all of it.
 
 Personal $24/mo (regular $29), Home+ $49/mo (regular $59) and Family $74/mo (regular $89), all monthly. We also have a limited-time Founding Member offer that locks in your pricing for the first 12 months.
 

@@ -232,7 +232,7 @@ CARDS: dict[str, CardContent] = {
         "02",
         "plans-pricing",
         "They count on you.|Keep them safe online too.",
-        "The dog counts on you. So do the kids and the computer everyone shares.",
+        "Your kids, your parents, the computer everyone shares. We watch over all of it.",
         bullets=[
             "Personal $24/mo, Home+ $49/mo and Family $74/mo, all monthly. We also have a "
             + FOUNDING_IMAGE
@@ -240,7 +240,6 @@ CARDS: dict[str, CardContent] = {
         ],
         cta_bar=START_CTA,
         hero_mode="plan_tiles",
-        pricing_line="Personal $24/mo · Home+ $49/mo · Family $74/mo",
         founding_on_image=True,
     ),
     "plans-pricing-40": _card(

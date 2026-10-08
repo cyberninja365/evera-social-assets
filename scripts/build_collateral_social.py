@@ -339,27 +339,137 @@ def draw_popup_hero(size: tuple[int, int], title: str, body: str) -> Image.Image
     return canvas
 
 
-def _draw_icon_tile(draw: ImageDraw.ImageDraw, cx: int, cy: int, r: int, label: str) -> None:
-    draw.ellipse((cx - r, cy - r, cx + r, cy + r), fill=WHITE, outline=NAVY, width=3)
-    draw.ellipse((cx - r // 2, cy - r // 2, cx + r // 2, cy + r // 2), fill=LIGHT_BLUE)
-    font = ImageFont.truetype(FONT_BOLD, max(22, r // 2))
-    tw = draw.textlength(label, font=font)
-    draw.text((cx - tw / 2, cy - font.size // 2 - 2), label, fill=NAVY, font=font)
+class _IconGlyphDraw(ImageDraw.ImageDraw):
+    """ImageDraw wrapper that forbids text inside icon circles (build-time guard)."""
+
+    def text(self, *args, **kwargs):  # type: ignore[no-untyped-def]
+        raise RuntimeError("Icon circles must use vector glyphs only, not text")
 
 
-def draw_icons_hero(size: tuple[int, int], labels: tuple[str, str, str] = ("PC", "Shield", "Call")) -> Image.Image:
+def _draw_laptop_glyph(draw: ImageDraw.ImageDraw, cx: int, cy: int, r: int) -> None:
+    sw = int(r * 1.15)
+    sh = int(r * 0.72)
+    top = cy - sh // 2
+    draw.rounded_rectangle(
+        (cx - sw // 2, top, cx + sw // 2, top + int(sh * 0.82)),
+        radius=5,
+        fill=WHITE,
+        outline=NAVY,
+        width=3,
+    )
+    base_h = max(6, r // 6)
+    draw.rectangle(
+        (cx - sw // 3, top + int(sh * 0.82), cx + sw // 3, top + int(sh * 0.82) + base_h),
+        fill=NAVY,
+    )
+
+
+def _draw_shield_glyph(draw: ImageDraw.ImageDraw, cx: int, cy: int, r: int) -> None:
+    w = int(r * 0.95)
+    h = int(r * 1.1)
+    top = cy - h // 2
+    points = [
+        (cx, top),
+        (cx + w // 2, top + h // 5),
+        (cx + w // 2, top + int(h * 0.72)),
+        (cx, top + h),
+        (cx - w // 2, top + int(h * 0.72)),
+        (cx - w // 2, top + h // 5),
+    ]
+    draw.polygon(points, fill=LIGHT_BLUE, outline=NAVY)
+    draw.line([(cx, top + h // 6), (cx, top + int(h * 0.62))], fill=NAVY, width=3)
+    draw.line([(cx - w // 4, top + h // 3), (cx, top + h // 2), (cx + w // 4, top + h // 4)], fill=NAVY, width=3)
+
+
+def _draw_headset_glyph(draw: ImageDraw.ImageDraw, cx: int, cy: int, r: int) -> None:
+    band_r = int(r * 0.85)
+    draw.arc(
+        (cx - band_r, cy - band_r, cx + band_r, cy + int(r * 0.35)),
+        start=200,
+        end=340,
+        fill=NAVY,
+        width=4,
+    )
+    cup_w = max(10, r // 3)
+    cup_h = int(r * 0.55)
+    draw.rounded_rectangle(
+        (cx - band_r - cup_w // 2, cy - cup_h // 3, cx - band_r + cup_w, cy + cup_h),
+        radius=6,
+        fill=WHITE,
+        outline=NAVY,
+        width=3,
+    )
+    draw.rounded_rectangle(
+        (cx + band_r - cup_w, cy - cup_h // 3, cx + band_r + cup_w // 2, cy + cup_h),
+        radius=6,
+        fill=WHITE,
+        outline=NAVY,
+        width=3,
+    )
+
+
+_ICON_GLYPHS = (_draw_laptop_glyph, _draw_shield_glyph, _draw_headset_glyph)
+
+
+def _icon_circle_layout(size: tuple[int, int]) -> tuple[int, list[int], list[int]]:
     w, h = size
-    canvas = Image.new("RGB", size, LIGHT_BLUE)
-    draw = ImageDraw.Draw(canvas)
     r = min(w, h) // 10
     gap = w // 4
-    cy = h // 2
+    cy_icon = h // 2 - 20
     positions = [gap, w // 2, w - gap]
+    return r, positions, [cy_icon] * 3
+
+
+def _draw_icon_circle_and_glyph(
+    draw: ImageDraw.ImageDraw,
+    cx: int,
+    cy: int,
+    r: int,
+    glyph_index: int,
+) -> None:
+    draw.ellipse((cx - r, cy - r, cx + r, cy + r), fill=WHITE, outline=NAVY, width=3)
+    glyph = _ICON_GLYPHS[glyph_index % len(_ICON_GLYPHS)]
+    glyph(draw, cx, cy, int(r * 0.72))
+
+
+def assert_icon_hero_has_no_circle_text(hero: Image.Image) -> None:
+    """Fail build if dark stroke density inside circles looks like text (not vector icons)."""
+    w, h = hero.size
+    r, positions, cy_list = _icon_circle_layout(hero.size)
+    gray = hero.convert("L")
+    inner = int(r * 0.55)
+    for cx, cy in zip(positions, cy_list):
+        x0, y0 = cx - inner, cy - inner
+        x1, y1 = cx + inner, cy + inner
+        crop = gray.crop((max(0, x0), max(0, y0), min(w, x1), min(h, y1)))
+        pixels = list(crop.get_flattened_data())
+        if not pixels:
+            continue
+        # Placeholder text left dense mid-tone strokes; glyphs use fewer isolated dark pixels.
+        dark = sum(1 for p in pixels if p < 85)
+        if dark > len(pixels) * 0.22:
+            raise SystemExit(
+                "Icon circle appears to contain text (placeholder stubs). Use vector glyphs only."
+            )
+
+
+def draw_icons_hero(size: tuple[int, int], labels: tuple[str, str, str] = ("Computers", "Monitoring", "Real help")) -> Image.Image:
+    w, h = size
+    canvas = Image.new("RGB", size, LIGHT_BLUE)
+    glyph_layer = Image.new("RGB", size, LIGHT_BLUE)
+    glyph_draw = _IconGlyphDraw(glyph_layer)
+    r, positions, cy_list = _icon_circle_layout(size)
+    for i, (x, cy) in enumerate(zip(positions, cy_list)):
+        _draw_icon_circle_and_glyph(glyph_draw, x, cy, r, i)
+    assert_icon_hero_has_no_circle_text(glyph_layer)
+
+    draw = ImageDraw.Draw(canvas)
+    canvas.paste(glyph_layer)
     cap_font = ImageFont.truetype(FONT_REG, max(24, int(w * 0.028)))
-    for i, (x, lab) in enumerate(zip(positions, labels)):
-        _draw_icon_tile(draw, x, cy - 20, r, lab[:1] if len(lab) <= 6 else lab[:3])
+    cy = h // 2
+    for i, x in enumerate(positions):
         tw = draw.textlength(labels[i], font=cap_font)
-        draw.text((x - tw / 2, cy + r + 8), labels[i], fill=NAVY, font=cap_font)
+        draw.text((x - tw / 2, cy + r - 12), labels[i], fill=NAVY, font=cap_font)
     return canvas
 
 
@@ -502,7 +612,8 @@ def render_card(
                 y += int(body_font.size * 1.2)
             y += 4
 
-    if content.get("pricing_line"):
+    show_pricing_line = bool(content.get("pricing_line")) and hero_mode != "plan_tiles"
+    if show_pricing_line:
         y += 10
         price_font = ImageFont.truetype(FONT_BOLD, body_px)
         y = draw_pricing_lines(draw, margin_x, y, content["pricing_line"], max_text_w, price_font)
@@ -532,7 +643,9 @@ def render_card(
         labels = content.get("icon_labels", ("Computers", "Monitoring", "Real help"))
         if isinstance(labels, list):
             labels = tuple(labels[:3])  # type: ignore[assignment]
-        canvas.paste(draw_icons_hero(hero_size, labels), (margin_x, hero_top))
+        hero_img = draw_icons_hero(hero_size, labels)
+        assert_icon_hero_has_no_circle_text(hero_img)
+        canvas.paste(hero_img, (margin_x, hero_top))
     elif hero_mode == "sms":
         sender = content.get("phone_caller", "Unknown")
         msg = content.get("phone_hint", "")
@@ -547,7 +660,9 @@ def render_card(
         phone_img = draw_phone_hero(hero_size, caller, hint)
         canvas.paste(phone_img, (margin_x, hero_top))
     else:
-        canvas.paste(draw_icons_hero(hero_size), (margin_x, hero_top))
+        hero_img = draw_icons_hero(hero_size)
+        assert_icon_hero_has_no_circle_text(hero_img)
+        canvas.paste(hero_img, (margin_x, hero_top))
 
     draw_cta_bar(canvas, content["cta_bar"], slug, size_label)
     return canvas
@@ -588,6 +703,53 @@ def write_card_map_yaml(entries: list[dict]) -> None:
         lines.append(f"    slug: \"{e['slug']}\"")
         lines.append(f"    campaign: \"{e['campaign']}\"")
     (OUT_DIR / "card_map.yaml").write_text("\n".join(lines) + "\n", encoding="utf-8")
+
+
+def icon_hero_slugs() -> list[str]:
+    slugs: list[str] = []
+    for slug in sorted(CARDS.keys()):
+        if get_card(slug).get("hero_mode", "icons") == "icons":
+            slugs.append(slug)
+    return slugs
+
+
+def cards_changed_this_build() -> list[str]:
+    changed = list(icon_hero_slugs())
+    if "plans-pricing-18" not in changed:
+        changed.append("plans-pricing-18")
+    return sorted(changed)
+
+
+def build_changed_contact_sheet(manifest: list[dict], slug_filter: frozenset[str]) -> Path:
+    v3_sheets = ROOT / "evera-marketing" / "review" / "pr2-collateral" / "v3" / "sheets"
+    v3_sheets.mkdir(parents=True, exist_ok=True)
+    thumbs: list[Image.Image] = []
+    labels: list[str] = []
+    for m in manifest:
+        slug = m["slug"]
+        if slug not in slug_filter:
+            continue
+        sq = OUT_DIR / m["output_square"]
+        if not sq.is_file():
+            continue
+        im = Image.open(sq).convert("RGB")
+        thumbs.append(im.resize((270, 270), Image.Resampling.LANCZOS))
+        labels.append(slug)
+    cols = 5
+    rows = (len(thumbs) + cols - 1) // cols
+    label_h = 28
+    sheet = Image.new("RGB", (cols * 270, rows * (270 + label_h)), WHITE)
+    draw = ImageDraw.Draw(sheet)
+    font = ImageFont.truetype(FONT_REG, 14)
+    for i, (thumb, lab) in enumerate(zip(thumbs, labels)):
+        c, r = i % cols, i // cols
+        x, y = c * 270, r * (270 + label_h)
+        sheet.paste(thumb, (x, y))
+        draw.text((x + 4, y + 272), lab[:36], fill=NAVY, font=font)
+    out = v3_sheets / "changed-icons-pricing-v4.jpg"
+    sheet.save(out, "JPEG", quality=90, optimize=True)
+    (v3_sheets / "changed-icons-pricing-v4-slugs.txt").write_text("\n".join(labels) + "\n", encoding="utf-8")
+    return out
 
 
 def build_contact_sheet(manifest: list[dict]) -> Path:
@@ -683,12 +845,16 @@ def main() -> int:
     (OUT_DIR / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
     write_card_map_yaml(card_map_entries)
     sheet_path = build_contact_sheet(manifest)
+    changed_slugs = frozenset(cards_changed_this_build())
+    changed_sheet = build_changed_contact_sheet(manifest, changed_slugs)
 
     jpg_count = sum(2 for m in manifest if m["output_square"] and m["output_portrait"])
     print(f"Removed {removed} dropped JPG(s)")
     print(f"Built {len(manifest)} kept cards")
     print(f"Wrote {jpg_count} JPGs to {OUT_DIR}")
     print(f"Contact sheet: {sheet_path}")
+    print(f"Changed cards ({len(changed_slugs)}): {', '.join(sorted(changed_slugs))}")
+    print(f"Changed contact sheet: {changed_sheet}")
     return 0
 
 

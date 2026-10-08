@@ -96,7 +96,7 @@ CAPTION_BODIES: dict[str, str] = {
         "Take the free 2-minute Cyber Checkup:"
     ),
     "plans-pricing-18": (
-        "The dog counts on you. So do the kids and the computer everyone shares.\n\n"
+        "Your kids, your parents, the computer everyone shares. We watch over all of it.\n\n"
         "Personal $24/mo (regular $29), Home+ $49/mo (regular $59) and Family $74/mo (regular $89), all monthly. "
         f"We also have a {FOUNDING_PHRASE}.\n\n"
         "Start with the free 2-minute Cyber Checkup:"
