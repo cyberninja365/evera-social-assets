@@ -44,6 +44,7 @@ CTA_BAR_PAD = 48
 ICON_CIRCLE_R = 80  # diameter ~160px
 ICON_LABEL_PX = 40
 HERO_AFTER_TEXT_GAP = 6
+MAX_BOTTOM_GAP_RATIO = 1.5  # vs logo-to-headline gap
 FOUNDING_ON_IMAGE = "Founding Member pricing for 12 months"
 
 SET_FOLDERS: list[tuple[str, str, str, str]] = [
@@ -469,9 +470,9 @@ def _draw_headset_glyph(draw: ImageDraw.ImageDraw, cx: int, cy: int, gr: int) ->
 _ICON_GLYPHS = (_draw_laptop_glyph, _draw_shield_glyph, _draw_headset_glyph)
 
 
-def _icon_circle_layout(size: tuple[int, int]) -> tuple[int, list[int], int, int]:
+def _icon_circle_layout(size: tuple[int, int], circle_r: int | None = None) -> tuple[int, list[int], int, int]:
     w, h = size
-    r = ICON_CIRCLE_R
+    r = circle_r if circle_r is not None else ICON_CIRCLE_R
     if w < 2 * r * 3 + 80:
         r = max(60, (w - 80) // 6)
     positions = [w // 6, w // 2, w - w // 6]
@@ -516,26 +517,35 @@ def assert_icon_hero_has_no_circle_text(hero: Image.Image) -> None:
             )
 
 
-def icon_hero_intrinsic_height(hero_w: int) -> int:
-    r = ICON_CIRCLE_R
+def _effective_icon_r(hero_w: int, circle_r: int | None = None) -> int:
+    r = circle_r if circle_r is not None else ICON_CIRCLE_R
     if hero_w < 2 * r * 3 + 80:
-        r = max(60, (hero_w - 80) // 6)
+        return max(60, (hero_w - 80) // 6)
+    return r
+
+
+def icon_hero_intrinsic_height(hero_w: int, circle_r: int | None = None) -> int:
+    r = _effective_icon_r(hero_w, circle_r)
     label_font = ImageFont.truetype(FONT_REG, ICON_LABEL_PX)
     return 2 * r + 14 + int(label_font.size * 1.2) + 8
 
 
-def plan_tiles_intrinsic_height(hero_w: int) -> int:
-    name_font = ImageFont.truetype(FONT_BOLD, max(30, int(hero_w * 0.034)))
-    price_font = ImageFont.truetype(FONT_BOLD, BODY_MIN_PX)
-    return 24 + name_font.size + 12 + price_font.size + 24
+def plan_tiles_intrinsic_height(hero_w: int, scale: float = 1.0) -> int:
+    name_font = ImageFont.truetype(FONT_BOLD, max(30, int(hero_w * 0.034 * scale)))
+    price_font = ImageFont.truetype(FONT_BOLD, max(BODY_MIN_PX, int(BODY_MIN_PX * scale)))
+    return int((24 + name_font.size + 12 + price_font.size + 20) * min(scale, 1.25))
 
 
-def draw_icons_hero(size: tuple[int, int], labels: tuple[str, str, str] = ("Computers", "Monitoring", "Real help")) -> Image.Image:
+def draw_icons_hero(
+    size: tuple[int, int],
+    labels: tuple[str, str, str] = ("Computers", "Monitoring", "Real help"),
+    circle_r: int | None = None,
+) -> Image.Image:
     w, h = size
     canvas = Image.new("RGB", (w, h), LIGHT_BLUE)
     glyph_layer = Image.new("RGB", (w, h), LIGHT_BLUE)
     glyph_draw = _IconGlyphDraw(glyph_layer)
-    r, positions, cy_icon, block_h = _icon_circle_layout((w, h))
+    r, positions, cy_icon, block_h = _icon_circle_layout((w, h), circle_r=circle_r)
     for i, x in enumerate(positions):
         _draw_icon_circle_and_glyph(glyph_draw, x, cy_icon, r, i)
     assert_icon_hero_has_no_circle_text(glyph_layer)
@@ -550,7 +560,7 @@ def draw_icons_hero(size: tuple[int, int], labels: tuple[str, str, str] = ("Comp
     return canvas
 
 
-def draw_plan_tiles_hero(size: tuple[int, int]) -> Image.Image:
+def draw_plan_tiles_hero(size: tuple[int, int], scale: float = 1.0) -> Image.Image:
     w, h = size
     canvas = Image.new("RGB", (w, h), LIGHT_BLUE)
     draw = ImageDraw.Draw(canvas)
@@ -559,10 +569,11 @@ def draw_plan_tiles_hero(size: tuple[int, int]) -> Image.Image:
         ("Home+", "$49/mo"),
         ("Family", "$74/mo"),
     ]
+    sc = max(1.0, min(scale, 1.45))
     tile_w = int((w - 64) / 3) - 10
-    name_font = ImageFont.truetype(FONT_BOLD, max(30, int(w * 0.034)))
-    price_font = ImageFont.truetype(FONT_BOLD, BODY_MIN_PX)
-    tile_h = 24 + name_font.size + 12 + price_font.size + 20
+    name_font = ImageFont.truetype(FONT_BOLD, max(30, int(w * 0.034 * sc)))
+    price_font = ImageFont.truetype(FONT_BOLD, max(BODY_MIN_PX, int(BODY_MIN_PX * sc)))
+    tile_h = min(h, int((24 + name_font.size + 12 + price_font.size + 20) * sc))
     y0 = max(0, (h - tile_h) // 2)
     for i, (name, price) in enumerate(plans):
         x0 = 32 + i * (tile_w + 14)
@@ -635,6 +646,139 @@ def draw_pricing_lines(
     return cy
 
 
+def measure_cta_reserved_height(w: int, h: int, cta_bar: str) -> int:
+    is_portrait = h > w
+    probe = ImageDraw.Draw(Image.new("RGB", (1, 1)))
+    cta_font = cta_font_for_bar(is_portrait)
+    max_inner = w - 2 * CTA_BAR_PAD
+    lines = cta_bar_lines(probe, cta_display_text(cta_bar), cta_font, max_inner)
+    if len(lines) > 1:
+        return max(CTA_BAR_H, int(cta_font.size * 1.15 * len(lines) + 20))
+    return CTA_BAR_H
+
+
+def measure_text_block_height(
+    content: CardContent,
+    hero_mode: str,
+    head_font: ImageFont.FreeTypeFont,
+    body_font: ImageFont.FreeTypeFont,
+    max_text_w: int,
+) -> int:
+    probe = ImageDraw.Draw(Image.new("RGB", (1, 1)))
+    y = 0
+    headline = content["headline"].replace("|", "\n")
+    for line in headline.split("\n"):
+        for wrapped in wrap_text(probe, line, head_font, max_text_w):
+            y += int(head_font.size * 1.12)
+    y += 8
+
+    if hero_mode not in ("phone", "sms", "popup"):
+        for line in content.get("image_lines", [])[:2]:
+            for wrapped in wrap_text(probe, line, body_font, max_text_w):
+                y += int(body_font.size * 1.2)
+            y += 4
+
+    show_pricing = bool(content.get("pricing_line")) and hero_mode != "plan_tiles"
+    if show_pricing:
+        y += 10
+        price_font = ImageFont.truetype(FONT_BOLD, body_font.size)
+        pricing = content["pricing_line"]
+        segments = [s.strip() for s in re.split(r"[·]", pricing) if s.strip()] or [pricing]
+        rows = 1
+        row_w = 0.0
+        gap = probe.textlength(" · ", font=price_font)
+        for seg in segments:
+            seg_w = probe.textlength(seg, font=price_font)
+            if row_w and row_w + gap + seg_w > max_text_w:
+                rows += 1
+                row_w = seg_w
+            else:
+                row_w = (row_w + gap + seg_w) if row_w else seg_w
+        y += rows * int(price_font.size * 1.25)
+        y += 6
+
+    if content.get("founding_on_image"):
+        y += 6
+        founding_font = ImageFont.truetype(FONT_REG, BODY_MIN_PX)
+        for line in wrap_text(probe, FOUNDING_ON_IMAGE, founding_font, max_text_w):
+            y += int(founding_font.size * 1.15)
+    return y
+
+
+def hero_intrinsic_height(hero_mode: str, hero_w: int) -> int:
+    if hero_mode == "icons":
+        return icon_hero_intrinsic_height(hero_w)
+    if hero_mode == "plan_tiles":
+        return plan_tiles_intrinsic_height(hero_w)
+    if hero_mode == "copy_panel":
+        return 160
+    if hero_mode in ("phone", "sms", "popup"):
+        return 280
+    if hero_mode == "none":
+        return 0
+    return icon_hero_intrinsic_height(hero_w)
+
+
+def compute_vertical_layout(
+    canvas_h: int,
+    header_h: int,
+    cta_reserved: int,
+    text_h: int,
+    hero_mode: str,
+    hero_w: int,
+) -> tuple[int, int, float, int | None]:
+    """Return block_top_y, hero_h, hero_scale, icon_circle_r."""
+    area_top = header_h
+    area_bottom = canvas_h - cta_reserved
+    area_h = max(0, area_bottom - area_top)
+    gap = HERO_AFTER_TEXT_GAP if hero_mode != "none" else 0
+    intrinsic = hero_intrinsic_height(hero_mode, hero_w)
+
+    if hero_mode == "none":
+        block_h = text_h
+        block_top = area_top + max(0, (area_h - block_h) // 2)
+        return block_top, 0, 1.0, None
+
+    if hero_mode in ("phone", "sms", "popup"):
+        hero_h = max(intrinsic, area_h - text_h - gap)
+        hero_h = min(hero_h, max(intrinsic, area_h - text_h - gap))
+        block_h = text_h + gap + hero_h
+        block_top = area_top + max(0, (area_h - block_h) // 2)
+        return block_top, hero_h, 1.0, None
+
+    spare = area_h - text_h - gap - intrinsic
+    hero_extra = max(0, spare // 2) if spare > 0 else 0
+    hero_h = intrinsic + hero_extra
+    block_h = text_h + gap + hero_h
+    block_top = area_top + max(0, (area_h - block_h) // 2)
+    scale = hero_h / intrinsic if intrinsic else 1.0
+    scale = min(scale, 1.45)
+    circle_r: int | None = None
+    if hero_mode == "icons":
+        circle_r = min(95, int(ICON_CIRCLE_R * scale))
+    return block_top, hero_h, scale, circle_r
+
+
+def assert_vertical_balance(
+    canvas_h: int,
+    header_h: int,
+    cta_reserved: int,
+    headline_top: int,
+    content_bottom: int,
+    slug: str,
+    size_label: str,
+) -> None:
+    gap_top = headline_top - header_h
+    gap_bottom = (canvas_h - cta_reserved) - content_bottom
+    if gap_top < 0:
+        gap_top = 0
+    if gap_bottom > gap_top * MAX_BOTTOM_GAP_RATIO + 4:
+        raise SystemExit(
+            f"Vertical layout on {slug} ({size_label}): gap above CTA ({gap_bottom}px) exceeds "
+            f"{MAX_BOTTOM_GAP_RATIO}x logo-to-headline gap ({gap_top}px)."
+        )
+
+
 def paste_logo(canvas: Image.Image, logo: Image.Image, header_h: int) -> None:
     w = canvas.width
     scale = LOGO_TARGET_WIDTH / logo.width
@@ -663,19 +807,23 @@ def render_card(
     draw.rectangle((0, 0, w, header_h), fill=LIGHT_BLUE)
     paste_logo(canvas, logo, header_h)
 
-    cta_h = CTA_BAR_H
-    text_top = header_h + 16
-    text_bottom_limit = h - cta_h - 16
     size_label = "portrait" if is_portrait else "square"
+    cta_reserved = measure_cta_reserved_height(w, h, content["cta_bar"])
 
     headline_px = 52 if is_portrait else 46
     body_px = 42 if is_portrait else 40
     head_font, body_font = load_fonts(headline_px, body_px)
     margin_x = 56
     max_text_w = w - 2 * margin_x
-
     hero_mode = content.get("hero_mode", "icons")
-    y = text_top
+    hero_w = w - 2 * margin_x
+
+    text_h = measure_text_block_height(content, hero_mode, head_font, body_font, max_text_w)
+    block_top, hero_h, hero_scale, circle_r = compute_vertical_layout(
+        h, header_h, cta_reserved, text_h, hero_mode, hero_w
+    )
+    headline_top = block_top
+    y = block_top
 
     headline = content["headline"].replace("|", "\n")
     for line in headline.split("\n"):
@@ -705,57 +853,50 @@ def render_card(
             draw.text((margin_x, y), line, fill=NAVY, font=founding_font)
             y += int(founding_font.size * 1.15)
 
-    hero_top = y + HERO_AFTER_TEXT_GAP
-    hero_bottom = text_bottom_limit
-    hero_w = w - 2 * margin_x
-    available_h = max(80, hero_bottom - hero_top)
-
-    if hero_mode == "icons":
-        hero_h = min(available_h, icon_hero_intrinsic_height(hero_w))
-    elif hero_mode == "plan_tiles":
-        hero_h = min(available_h, plan_tiles_intrinsic_height(hero_w))
-    elif hero_mode == "copy_panel":
-        hero_h = min(available_h, max(140, int(available_h * 0.55)))
-    elif hero_mode in ("phone", "sms", "popup"):
-        hero_h = available_h
-    elif hero_mode == "none":
-        hero_h = 0
-    else:
-        hero_h = min(available_h, icon_hero_intrinsic_height(hero_w))
+    hero_top = y + (HERO_AFTER_TEXT_GAP if hero_mode != "none" else 0)
     hero_size = (hero_w, hero_h)
+    content_bottom = hero_top
 
-    if hero_mode == "none":
-        pass
-    elif hero_mode == "plan_tiles":
-        canvas.paste(draw_plan_tiles_hero(hero_size), (margin_x, hero_top))
+    if hero_mode == "plan_tiles":
+        canvas.paste(draw_plan_tiles_hero(hero_size, scale=hero_scale), (margin_x, hero_top))
+        content_bottom = hero_top + hero_h
     elif hero_mode == "copy_panel":
         panel_lines = content.get("panel_lines") or content.get("bullets", [])[:3]
         canvas.paste(draw_copy_panel_hero(hero_size, list(panel_lines)), (margin_x, hero_top))
+        content_bottom = hero_top + hero_h
     elif hero_mode == "icons":
         labels = content.get("icon_labels", ("Computers", "Monitoring", "Real help"))
         if isinstance(labels, list):
             labels = tuple(labels[:3])  # type: ignore[assignment]
-        hero_img = draw_icons_hero(hero_size, labels)
+        hero_img = draw_icons_hero(hero_size, labels, circle_r=circle_r)
         assert_icon_hero_has_no_circle_text(hero_img)
         canvas.paste(hero_img, (margin_x, hero_top))
+        content_bottom = hero_top + hero_h
     elif hero_mode == "sms":
         sender = content.get("phone_caller", "Unknown")
         msg = content.get("phone_hint", "")
         canvas.paste(draw_sms_hero(hero_size, sender, msg), (margin_x, hero_top))
+        content_bottom = hero_top + hero_h
     elif hero_mode == "popup":
         title = content.get("phone_caller", "Security warning")
         body = content.get("phone_hint", "Call the number on screen now.")
         canvas.paste(draw_popup_hero(hero_size, title, body), (margin_x, hero_top))
+        content_bottom = hero_top + hero_h
     elif hero_mode == "phone":
         caller = content.get("phone_caller", "Unknown caller")
         hint = content.get("phone_hint", "If you're not sure, hang up and call back on a number you trust.")
         phone_img = draw_phone_hero(hero_size, caller, hint)
         canvas.paste(phone_img, (margin_x, hero_top))
-    else:
-        hero_img = draw_icons_hero(hero_size)
+        content_bottom = hero_top + hero_h
+    elif hero_mode != "none":
+        hero_img = draw_icons_hero(hero_size, circle_r=circle_r)
         assert_icon_hero_has_no_circle_text(hero_img)
         canvas.paste(hero_img, (margin_x, hero_top))
+        content_bottom = hero_top + hero_h
+    else:
+        content_bottom = y
 
+    assert_vertical_balance(h, header_h, cta_reserved, headline_top, content_bottom, slug, size_label)
     draw_cta_bar(canvas, content["cta_bar"], slug, size_label)
     return canvas
 
@@ -835,9 +976,9 @@ def build_changed_contact_sheet(manifest: list[dict], slug_filter: frozenset[str
         x, y = c * 270, r * (270 + label_h)
         sheet.paste(thumb, (x, y))
         draw.text((x + 4, y + 272), lab[:36], fill=NAVY, font=font)
-    out = v3_sheets / "changed-layout-v5.jpg"
+    out = v3_sheets / "changed-layout-v6.jpg"
     sheet.save(out, "JPEG", quality=90, optimize=True)
-    (v3_sheets / "changed-layout-v5-slugs.txt").write_text("\n".join(labels) + "\n", encoding="utf-8")
+    (v3_sheets / "changed-layout-v6-slugs.txt").write_text("\n".join(labels) + "\n", encoding="utf-8")
     return out
 
 
