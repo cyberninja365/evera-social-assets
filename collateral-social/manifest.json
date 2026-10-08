@@ -1,0 +1,497 @@
+[
+  {
+    "set": "01",
+    "source_file": "source/4x6/01 Free Cyber Checkup/18-new.png",
+    "slug": "free-checkup-18-new",
+    "campaign": "free-cyber-checkup",
+    "output_square": "01-free-checkup-18-new.jpg",
+    "output_portrait": "01-free-checkup-18-new-ig.jpg",
+    "issues": []
+  },
+  {
+    "set": "01",
+    "source_file": "source/4x6/01 Free Cyber Checkup/4.png",
+    "slug": "free-checkup-4",
+    "campaign": "free-cyber-checkup",
+    "output_square": "01-free-checkup-4.jpg",
+    "output_portrait": "01-free-checkup-4-ig.jpg",
+    "issues": []
+  },
+  {
+    "set": "01",
+    "source_file": "source/4x6/01 Free Cyber Checkup/9.png",
+    "slug": "free-checkup-9",
+    "campaign": "free-cyber-checkup",
+    "output_square": "01-free-checkup-9.jpg",
+    "output_portrait": "01-free-checkup-9-ig.jpg",
+    "issues": []
+  },
+  {
+    "set": "02",
+    "source_file": "source/4x6/02 See Plans & Pricing/10-new.png",
+    "slug": "plans-pricing-10-new",
+    "campaign": "plans-pricing",
+    "output_square": "02-plans-pricing-10-new.jpg",
+    "output_portrait": "02-plans-pricing-10-new-ig.jpg",
+    "issues": []
+  },
+  {
+    "set": "02",
+    "source_file": "source/4x6/02 See Plans & Pricing/11-new.png",
+    "slug": "plans-pricing-11-new",
+    "campaign": "plans-pricing",
+    "output_square": "02-plans-pricing-11-new.jpg",
+    "output_portrait": "02-plans-pricing-11-new-ig.jpg",
+    "issues": []
+  },
+  {
+    "set": "02",
+    "source_file": "source/4x6/02 See Plans & Pricing/11.png",
+    "slug": "plans-pricing-11",
+    "campaign": "plans-pricing",
+    "output_square": "02-plans-pricing-11.jpg",
+    "output_portrait": "02-plans-pricing-11-ig.jpg",
+    "issues": []
+  },
+  {
+    "set": "02",
+    "source_file": "source/4x6/02 See Plans & Pricing/12.png",
+    "slug": "plans-pricing-12",
+    "campaign": "plans-pricing",
+    "output_square": "02-plans-pricing-12.jpg",
+    "output_portrait": "02-plans-pricing-12-ig.jpg",
+    "issues": []
+  },
+  {
+    "set": "02",
+    "source_file": "source/4x6/02 See Plans & Pricing/15-new.png",
+    "slug": "plans-pricing-15-new",
+    "campaign": "plans-pricing",
+    "output_square": "02-plans-pricing-15-new.jpg",
+    "output_portrait": "02-plans-pricing-15-new-ig.jpg",
+    "issues": []
+  },
+  {
+    "set": "02",
+    "source_file": "source/4x6/02 See Plans & Pricing/15.png",
+    "slug": "plans-pricing-15",
+    "campaign": "plans-pricing",
+    "output_square": "02-plans-pricing-15.jpg",
+    "output_portrait": "02-plans-pricing-15-ig.jpg",
+    "issues": []
+  },
+  {
+    "set": "02",
+    "source_file": "source/4x6/02 See Plans & Pricing/16-new.png",
+    "slug": "plans-pricing-16-new",
+    "campaign": "plans-pricing",
+    "output_square": "02-plans-pricing-16-new.jpg",
+    "output_portrait": "02-plans-pricing-16-new-ig.jpg",
+    "issues": []
+  },
+  {
+    "set": "02",
+    "source_file": "source/4x6/02 See Plans & Pricing/16.png",
+    "slug": "plans-pricing-16",
+    "campaign": "plans-pricing",
+    "output_square": "02-plans-pricing-16.jpg",
+    "output_portrait": "02-plans-pricing-16-ig.jpg",
+    "issues": []
+  },
+  {
+    "set": "02",
+    "source_file": "source/4x6/02 See Plans & Pricing/17-new.png",
+    "slug": "plans-pricing-17-new",
+    "campaign": "plans-pricing",
+    "output_square": "02-plans-pricing-17-new.jpg",
+    "output_portrait": "02-plans-pricing-17-new-ig.jpg",
+    "issues": []
+  },
+  {
+    "set": "02",
+    "source_file": "source/4x6/02 See Plans & Pricing/17.png",
+    "slug": "plans-pricing-17",
+    "campaign": "plans-pricing",
+    "output_square": "02-plans-pricing-17.jpg",
+    "output_portrait": "02-plans-pricing-17-ig.jpg",
+    "issues": []
+  },
+  {
+    "set": "02",
+    "source_file": "source/4x6/02 See Plans & Pricing/18.png",
+    "slug": "plans-pricing-18",
+    "campaign": "plans-pricing",
+    "output_square": "02-plans-pricing-18.jpg",
+    "output_portrait": "02-plans-pricing-18-ig.jpg",
+    "issues": []
+  },
+  {
+    "set": "02",
+    "source_file": "source/4x6/02 See Plans & Pricing/40.png",
+    "slug": "plans-pricing-40",
+    "campaign": "plans-pricing",
+    "output_square": "02-plans-pricing-40.jpg",
+    "output_portrait": "02-plans-pricing-40-ig.jpg",
+    "issues": []
+  },
+  {
+    "set": "02",
+    "source_file": "source/4x6/02 See Plans & Pricing/6.png",
+    "slug": "plans-pricing-6",
+    "campaign": "plans-pricing",
+    "output_square": "02-plans-pricing-6.jpg",
+    "output_portrait": "02-plans-pricing-6-ig.jpg",
+    "issues": []
+  },
+  {
+    "set": "02",
+    "source_file": "source/4x6/02 See Plans & Pricing/7-new.png",
+    "slug": "plans-pricing-7-new",
+    "campaign": "plans-pricing",
+    "output_square": "02-plans-pricing-7-new.jpg",
+    "output_portrait": "02-plans-pricing-7-new-ig.jpg",
+    "issues": []
+  },
+  {
+    "set": "02",
+    "source_file": "source/4x6/02 See Plans & Pricing/7.png",
+    "slug": "plans-pricing-7",
+    "campaign": "plans-pricing",
+    "output_square": "02-plans-pricing-7.jpg",
+    "output_portrait": "02-plans-pricing-7-ig.jpg",
+    "issues": []
+  },
+  {
+    "set": "02",
+    "source_file": "source/4x6/02 See Plans & Pricing/9-new.png",
+    "slug": "plans-pricing-9-new",
+    "campaign": "plans-pricing",
+    "output_square": "02-plans-pricing-9-new.jpg",
+    "output_portrait": "02-plans-pricing-9-new-ig.jpg",
+    "issues": []
+  },
+  {
+    "set": "03",
+    "source_file": "source/4x6/03 Protect Mom & Dad/14-2.png",
+    "slug": "protect-mom-dad-14-2",
+    "campaign": "protect-mom-dad",
+    "output_square": "03-protect-mom-dad-14-2.jpg",
+    "output_portrait": "03-protect-mom-dad-14-2-ig.jpg",
+    "issues": []
+  },
+  {
+    "set": "03",
+    "source_file": "source/4x6/03 Protect Mom & Dad/14.png",
+    "slug": "protect-mom-dad-14",
+    "campaign": "protect-mom-dad",
+    "output_square": "03-protect-mom-dad-14.jpg",
+    "output_portrait": "03-protect-mom-dad-14-ig.jpg",
+    "issues": []
+  },
+  {
+    "set": "03",
+    "source_file": "source/4x6/03 Protect Mom & Dad/19-new.png",
+    "slug": "protect-mom-dad-19-new",
+    "campaign": "protect-mom-dad",
+    "output_square": "03-protect-mom-dad-19-new.jpg",
+    "output_portrait": "03-protect-mom-dad-19-new-ig.jpg",
+    "issues": []
+  },
+  {
+    "set": "03",
+    "source_file": "source/4x6/03 Protect Mom & Dad/19.png",
+    "slug": "protect-mom-dad-19",
+    "campaign": "protect-mom-dad",
+    "output_square": "03-protect-mom-dad-19.jpg",
+    "output_portrait": "03-protect-mom-dad-19-ig.jpg",
+    "issues": []
+  },
+  {
+    "set": "03",
+    "source_file": "source/4x6/03 Protect Mom & Dad/20-new.png",
+    "slug": "protect-mom-dad-20-new",
+    "campaign": "protect-mom-dad",
+    "output_square": "03-protect-mom-dad-20-new.jpg",
+    "output_portrait": "03-protect-mom-dad-20-new-ig.jpg",
+    "issues": []
+  },
+  {
+    "set": "03",
+    "source_file": "source/4x6/03 Protect Mom & Dad/21-new-dad.png",
+    "slug": "protect-mom-dad-21-new-dad",
+    "campaign": "protect-mom-dad",
+    "output_square": "03-protect-mom-dad-21-new-dad.jpg",
+    "output_portrait": "03-protect-mom-dad-21-new-dad-ig.jpg",
+    "issues": []
+  },
+  {
+    "set": "03",
+    "source_file": "source/4x6/03 Protect Mom & Dad/21-new-mom.png",
+    "slug": "protect-mom-dad-21-new-mom",
+    "campaign": "protect-mom-dad",
+    "output_square": "03-protect-mom-dad-21-new-mom.jpg",
+    "output_portrait": "03-protect-mom-dad-21-new-mom-ig.jpg",
+    "issues": []
+  },
+  {
+    "set": "03",
+    "source_file": "source/4x6/03 Protect Mom & Dad/26.png",
+    "slug": "protect-mom-dad-26",
+    "campaign": "protect-mom-dad",
+    "output_square": "03-protect-mom-dad-26.jpg",
+    "output_portrait": "03-protect-mom-dad-26-ig.jpg",
+    "issues": []
+  },
+  {
+    "set": "03",
+    "source_file": "source/4x6/03 Protect Mom & Dad/36.png",
+    "slug": "protect-mom-dad-36",
+    "campaign": "protect-mom-dad",
+    "output_square": "03-protect-mom-dad-36.jpg",
+    "output_portrait": "03-protect-mom-dad-36-ig.jpg",
+    "issues": []
+  },
+  {
+    "set": "03",
+    "source_file": "source/4x6/03 Protect Mom & Dad/37.png",
+    "slug": "protect-mom-dad-37",
+    "campaign": "protect-mom-dad",
+    "output_square": "03-protect-mom-dad-37.jpg",
+    "output_portrait": "03-protect-mom-dad-37-ig.jpg",
+    "issues": []
+  },
+  {
+    "set": "03",
+    "source_file": "source/4x6/03 Protect Mom & Dad/38.png",
+    "slug": "protect-mom-dad-38",
+    "campaign": "protect-mom-dad",
+    "output_square": "03-protect-mom-dad-38.jpg",
+    "output_portrait": "03-protect-mom-dad-38-ig.jpg",
+    "issues": []
+  },
+  {
+    "set": "03",
+    "source_file": "source/4x6/03 Protect Mom & Dad/39.png",
+    "slug": "protect-mom-dad-39",
+    "campaign": "protect-mom-dad",
+    "output_square": "03-protect-mom-dad-39.jpg",
+    "output_portrait": "03-protect-mom-dad-39-ig.jpg",
+    "issues": []
+  },
+  {
+    "set": "03",
+    "source_file": "source/4x6/03 Protect Mom & Dad/8-new.png",
+    "slug": "protect-mom-dad-8-new",
+    "campaign": "protect-mom-dad",
+    "output_square": "03-protect-mom-dad-8-new.jpg",
+    "output_portrait": "03-protect-mom-dad-8-new-ig.jpg",
+    "issues": []
+  },
+  {
+    "set": "04",
+    "source_file": "source/4x6/04 Ask Evera_Scam Help/23-1.png",
+    "slug": "scam-help-23-1",
+    "campaign": "scam-help",
+    "output_square": "04-scam-help-23-1.jpg",
+    "output_portrait": "04-scam-help-23-1-ig.jpg",
+    "issues": []
+  },
+  {
+    "set": "04",
+    "source_file": "source/4x6/04 Ask Evera_Scam Help/23-2.png",
+    "slug": "scam-help-23-2",
+    "campaign": "scam-help",
+    "output_square": "04-scam-help-23-2.jpg",
+    "output_portrait": "04-scam-help-23-2-ig.jpg",
+    "issues": []
+  },
+  {
+    "set": "04",
+    "source_file": "source/4x6/04 Ask Evera_Scam Help/24.png",
+    "slug": "scam-help-24",
+    "campaign": "scam-help",
+    "output_square": "04-scam-help-24.jpg",
+    "output_portrait": "04-scam-help-24-ig.jpg",
+    "issues": []
+  },
+  {
+    "set": "04",
+    "source_file": "source/4x6/04 Ask Evera_Scam Help/33.png",
+    "slug": "scam-help-33",
+    "campaign": "scam-help",
+    "output_square": "04-scam-help-33.jpg",
+    "output_portrait": "04-scam-help-33-ig.jpg",
+    "issues": []
+  },
+  {
+    "set": "04",
+    "source_file": "source/4x6/04 Ask Evera_Scam Help/34.png",
+    "slug": "scam-help-34",
+    "campaign": "scam-help",
+    "output_square": "04-scam-help-34.jpg",
+    "output_portrait": "04-scam-help-34-ig.jpg",
+    "issues": []
+  },
+  {
+    "set": "04",
+    "source_file": "source/4x6/04 Ask Evera_Scam Help/35.png",
+    "slug": "scam-help-35",
+    "campaign": "scam-help",
+    "output_square": "04-scam-help-35.jpg",
+    "output_portrait": "04-scam-help-35-ig.jpg",
+    "issues": []
+  },
+  {
+    "set": "05",
+    "source_file": "source/4x6/05 Free Scam Guide/22.png",
+    "slug": "free-scam-guide-22",
+    "campaign": "free-scam-guide",
+    "output_square": "05-free-scam-guide-22.jpg",
+    "output_portrait": "05-free-scam-guide-22-ig.jpg",
+    "issues": []
+  },
+  {
+    "set": "05",
+    "source_file": "source/4x6/05 Free Scam Guide/27.png",
+    "slug": "free-scam-guide-27",
+    "campaign": "free-scam-guide",
+    "output_square": "05-free-scam-guide-27.jpg",
+    "output_portrait": "05-free-scam-guide-27-ig.jpg",
+    "issues": []
+  },
+  {
+    "set": "05",
+    "source_file": "source/4x6/05 Free Scam Guide/28.png",
+    "slug": "free-scam-guide-28",
+    "campaign": "free-scam-guide",
+    "output_square": "05-free-scam-guide-28.jpg",
+    "output_portrait": "05-free-scam-guide-28-ig.jpg",
+    "issues": []
+  },
+  {
+    "set": "05",
+    "source_file": "source/4x6/05 Free Scam Guide/29.png",
+    "slug": "free-scam-guide-29",
+    "campaign": "free-scam-guide",
+    "output_square": "05-free-scam-guide-29.jpg",
+    "output_portrait": "05-free-scam-guide-29-ig.jpg",
+    "issues": []
+  },
+  {
+    "set": "05",
+    "source_file": "source/4x6/05 Free Scam Guide/30-1-dad.png",
+    "slug": "free-scam-guide-30-1-dad",
+    "campaign": "free-scam-guide",
+    "output_square": "05-free-scam-guide-30-1-dad.jpg",
+    "output_portrait": "05-free-scam-guide-30-1-dad-ig.jpg",
+    "issues": []
+  },
+  {
+    "set": "05",
+    "source_file": "source/4x6/05 Free Scam Guide/30-1-mom.png",
+    "slug": "free-scam-guide-30-1-mom",
+    "campaign": "free-scam-guide",
+    "output_square": "05-free-scam-guide-30-1-mom.jpg",
+    "output_portrait": "05-free-scam-guide-30-1-mom-ig.jpg",
+    "issues": []
+  },
+  {
+    "set": "05",
+    "source_file": "source/4x6/05 Free Scam Guide/30-2.png",
+    "slug": "free-scam-guide-30-2",
+    "campaign": "free-scam-guide",
+    "output_square": "05-free-scam-guide-30-2.jpg",
+    "output_portrait": "05-free-scam-guide-30-2-ig.jpg",
+    "issues": []
+  },
+  {
+    "set": "05",
+    "source_file": "source/4x6/05 Free Scam Guide/31.png",
+    "slug": "free-scam-guide-31",
+    "campaign": "free-scam-guide",
+    "output_square": "05-free-scam-guide-31.jpg",
+    "output_portrait": "05-free-scam-guide-31-ig.jpg",
+    "issues": []
+  },
+  {
+    "set": "06",
+    "source_file": "source/4x6/06 Talk to a Real Person/8.png",
+    "slug": "talk-to-a-real-person-8",
+    "campaign": "talk-to-a-real-person",
+    "output_square": "06-talk-to-a-real-person-8.jpg",
+    "output_portrait": "06-talk-to-a-real-person-8-ig.jpg",
+    "issues": []
+  },
+  {
+    "set": "07",
+    "source_file": "source/4x6/07 Launch Special/L1.png",
+    "slug": "launch-special-l1",
+    "campaign": "launch-special",
+    "output_square": "07-launch-special-l1.jpg",
+    "output_portrait": "07-launch-special-l1-ig.jpg",
+    "issues": []
+  },
+  {
+    "set": "07",
+    "source_file": "source/4x6/07 Launch Special/L10.png",
+    "slug": "launch-special-l10",
+    "campaign": "launch-special",
+    "output_square": "07-launch-special-l10.jpg",
+    "output_portrait": "07-launch-special-l10-ig.jpg",
+    "issues": []
+  },
+  {
+    "set": "07",
+    "source_file": "source/4x6/07 Launch Special/L2-BAK.png",
+    "slug": "launch-special-l2-bak",
+    "campaign": "launch-special",
+    "output_square": "07-launch-special-l2-bak.jpg",
+    "output_portrait": "07-launch-special-l2-bak-ig.jpg",
+    "issues": []
+  },
+  {
+    "set": "07",
+    "source_file": "source/4x6/07 Launch Special/L2-MEM1.png",
+    "slug": "launch-special-l2-mem1",
+    "campaign": "launch-special",
+    "output_square": "07-launch-special-l2-mem1.jpg",
+    "output_portrait": "07-launch-special-l2-mem1-ig.jpg",
+    "issues": []
+  },
+  {
+    "set": "07",
+    "source_file": "source/4x6/07 Launch Special/L4.png",
+    "slug": "launch-special-l4",
+    "campaign": "launch-special",
+    "output_square": "07-launch-special-l4.jpg",
+    "output_portrait": "07-launch-special-l4-ig.jpg",
+    "issues": []
+  },
+  {
+    "set": "07",
+    "source_file": "source/4x6/07 Launch Special/L5.png",
+    "slug": "launch-special-l5",
+    "campaign": "launch-special",
+    "output_square": "07-launch-special-l5.jpg",
+    "output_portrait": "07-launch-special-l5-ig.jpg",
+    "issues": []
+  },
+  {
+    "set": "07",
+    "source_file": "source/4x6/07 Launch Special/L6.png",
+    "slug": "launch-special-l6",
+    "campaign": "launch-special",
+    "output_square": "07-launch-special-l6.jpg",
+    "output_portrait": "07-launch-special-l6-ig.jpg",
+    "issues": []
+  },
+  {
+    "set": "08",
+    "source_file": "source/4x6/08 Scam Quiz/5.png",
+    "slug": "scam-quiz-5",
+    "campaign": "scam-quiz",
+    "output_square": "08-scam-quiz-5.jpg",
+    "output_portrait": "08-scam-quiz-5-ig.jpg",
+    "issues": []
+  }
+]
