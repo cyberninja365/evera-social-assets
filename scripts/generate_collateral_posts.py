@@ -352,9 +352,11 @@ def build_link(slug: str, campaign: str, platform: str) -> str:
 
 def hashtags_for(slug: str) -> str:
     tags = ["#EveraCyber", "#HomeCybersecurity"]
-    if slug in BAKERSFIELD_SLUGS:
+    card = get_card(slug)
+    geo = card.get("link_geo")
+    if geo == "bakersfield" or slug in BAKERSFIELD_SLUGS:
         tags.append("#KernCounty")
-    elif slug in MEMPHIS_SLUGS:
+    elif geo == "memphis" or slug in MEMPHIS_SLUGS:
         tags.append("#Memphis")
     else:
         tags.append("#CyberSafety")
@@ -374,9 +376,9 @@ def full_caption(slug: str, campaign: str, platform: str) -> str:
 
 
 def schedule_for(slug: str, platform: str) -> str:
-    if slug == "launch-special-l2-mem1" and platform == "tiktok":
-        return "2025-11-01"
-    return SUGGESTED_SCHEDULE.get(slug, "")
+    if slug in SUGGESTED_SCHEDULE:
+        return SUGGESTED_SCHEDULE[slug]
+    return ""
 
 
 def main() -> None:

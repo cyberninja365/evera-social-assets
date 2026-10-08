@@ -10,13 +10,13 @@ from dataclasses import dataclass, field
 from pathlib import Path
 
 import numpy as np
-from PIL import Image, ImageDraw, ImageFont
+from PIL import Image, ImageDraw, ImageFilter, ImageFont
 
 ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from scripts.collateral_content import CARDS, CardContent, get_card
+from scripts.collateral_content import CARDS, CardContent, get_card  # noqa: F401
 from scripts.collateral_drops import DROP_OUTPUT_BASENAMES, is_dropped_slug
 
 SOURCE_ROOT = ROOT / "source" / "4x6"
@@ -85,12 +85,30 @@ def extract_front_panel(img: Image.Image) -> Image.Image:
 
 
 def extract_hero_photo(front: Image.Image) -> Image.Image:
-    """Front-panel photo strip, avoiding mailer header/footer bands."""
+    """Photo-only strip from mailer art (avoid headline/CTA/QR bands)."""
     w, h = front.size
-    y0 = int(h * 0.22)
-    y1 = int(h * 0.70)
-    crop = front.crop((0, y0, w, y1))
+    x0, x1 = int(w * 0.08), int(w * 0.98)
+    y0, y1 = int(h * 0.40), int(h * 0.74)
+    crop = front.crop((x0, y0, x1, y1))
+    arr = np.array(crop.convert("RGB"))
+    # Down-weight high-contrast text rows (mailer typography)
+    gray = arr.mean(axis=2)
+    row_edge = np.abs(np.diff(gray, axis=1)).mean(axis=1)
+    quiet = row_edge < 18
+    if quiet.sum() > 10:
+        idx = np.where(quiet)[0]
+        y0r, y1r = idx[0], idx[-1] + 1
+        if y1r - y0r > crop.height * 0.25:
+            crop = crop.crop((0, y0r, crop.width, y1r))
     return crop.convert("RGB")
+
+
+def soften_hero(photo: Image.Image) -> Image.Image:
+    """Blur mailer typography in photo strips so only color/people remain."""
+    w, h = photo.size
+    small = photo.resize((max(1, w // 5), max(1, h // 5)), Image.Resampling.LANCZOS)
+    blurred = small.resize((w, h), Image.Resampling.LANCZOS).filter(ImageFilter.GaussianBlur(radius=6))
+    return blurred
 
 
 def load_fonts(headline_px: int, body_px: int) -> tuple[ImageFont.FreeTypeFont, ImageFont.FreeTypeFont]:
@@ -215,22 +233,18 @@ def render_card(
 
     headline = content["headline"].replace("|", "\n")
     for line in headline.split("\n"):
-        draw.text((margin_x, y), line, fill=NAVY, font=head_font)
-        y += int(head_font.size * 1.12)
+        for wrapped in wrap_text(draw, line, head_font, max_text_w):
+            draw.text((margin_x, y), wrapped, fill=NAVY, font=head_font)
+            y += int(head_font.size * 1.12)
     y += 8
 
-    sub_lines = wrap_text(draw, content["subhead"], body_font, max_text_w)
-    for line in sub_lines:
-        draw.text((margin_x, y), line, fill=(40, 50, 60), font=body_font)
-        y += int(body_font.size * 1.2)
-
-    for bullet in content.get("bullets", []):
-        y += 6
-        wrapped = wrap_text(draw, bullet, body_font, max_text_w - 28)
-        for i, line in enumerate(wrapped):
-            prefix = "• " if i == 0 else "  "
-            draw.text((margin_x + 8, y), prefix + line, font=body_font, fill=(40, 50, 60))
-            y += int(body_font.size * 1.15)
+    # On-image copy stays short (captions live in posts.csv only).
+    if hero_mode != "phone":
+        for line in content.get("image_lines", [])[:2]:
+            for wrapped in wrap_text(draw, line, body_font, max_text_w):
+                draw.text((margin_x, y), wrapped, fill=(40, 50, 60), font=body_font)
+                y += int(body_font.size * 1.2)
+            y += 4
 
     if content.get("pricing_line"):
         y += 10
@@ -241,7 +255,7 @@ def render_card(
     if content.get("founding_on_image"):
         y += 6
         founding_font = ImageFont.truetype(FONT_REG, max(34, body_px - 4))
-        founding = "Founding Member pricing — first 12 months locked in"
+        founding = "Founding Member pricing locked for the first 12 months"
         for line in wrap_text(draw, founding, founding_font, max_text_w):
             draw.text((margin_x, y), line, fill=NAVY, font=founding_font)
             y += int(founding_font.size * 1.15)
@@ -254,11 +268,13 @@ def render_card(
         pass
     elif hero_mode == "phone":
         phone_h = hero_bottom - hero_top
-        phone_img = draw_phone_hero((w - 2 * margin_x, phone_h), content["subhead"], content.get("bullets", [""])[0][:100] if content.get("bullets") else "")
+        caller = content.get("phone_caller", "Unknown caller")
+        hint = content.get("phone_hint", "If you're not sure, hang up and call back on a number you trust.")
+        phone_img = draw_phone_hero((w - 2 * margin_x, phone_h), caller, hint)
         canvas.paste(phone_img, (margin_x, hero_top))
     else:
         if hero_photo is not None:
-            paste_cover(canvas, hero_photo, hero_box)
+            paste_cover(canvas, soften_hero(hero_photo), hero_box)
 
     cta_text = content["cta_bar"]
     draw.rectangle((0, h - cta_h, w, h), fill=ORANGE)

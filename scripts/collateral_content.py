@@ -33,6 +33,9 @@ def _card(
     pricing_line: str = "",
     founding_on_image: bool = False,
     link_geo: LinkGeo | None = None,
+    image_lines: list[str] | None = None,
+    phone_caller: str = "",
+    phone_hint: str = "",
 ) -> CardContent:
     out: CardContent = {
         "set_id": set_id,
@@ -50,6 +53,12 @@ def _card(
         out["founding_on_image"] = True
     if link_geo:
         out["link_geo"] = link_geo
+    if image_lines:
+        out["image_lines"] = image_lines
+    if phone_caller:
+        out["phone_caller"] = phone_caller
+    if phone_hint:
+        out["phone_hint"] = phone_hint
     return out
 
 
@@ -121,8 +130,9 @@ CARDS: dict[str, CardContent] = {
             + "."
         ],
         cta_bar=START_CTA,
-        pricing_line="Personal $24/mo · Home+ $49/mo · Family $74/mo",
+        pricing_line="Personal $24/mo (regular $29) · Home+ $49/mo (regular $59) · Family $74/mo (regular $89)",
         founding_on_image=True,
+        image_lines=["Monthly plans for real households."],
     ),
     "plans-pricing-11": _card(
         "02",
@@ -702,10 +712,44 @@ CARDS: dict[str, CardContent] = {
 }
 
 
+PHONE_UI: dict[str, tuple[str, str]] = {
+    "free-scam-guide-22": ("Your Bank", "Caller ID can be faked. Hang up and call the number on your card."),
+    "scam-help-23-1": ("Fraud alert", "Suspicious charge detected. Was this you?"),
+    "scam-help-23-2": ("Account notice", "Your account has been locked. Verify now."),
+    "scam-help-24": ("Tech support", "We detected a problem on your computer."),
+    "scam-help-34": ("Utility company", "Shutoff scheduled unless you pay today."),
+    "free-scam-guide-27": ("New number", "Hi Mom, new phone. Need help."),
+    "free-scam-guide-28": ("Family call", "It's me. I need help right away."),
+    "free-scam-guide-29": ("Caller", "Pay with gift cards to fix this."),
+    "free-scam-guide-30-1-dad": ("Your Bank", "Enter the code we texted you."),
+    "free-scam-guide-30-1-mom": ("Your Bank", "Enter the code we texted you."),
+    "free-scam-guide-30-2": ("Your Bank", "We already verified your name."),
+    "free-scam-guide-31": ("Delivery", "Package on hold. Tap to update."),
+    "protect-mom-dad-21-new-dad": ("Bank alert", "Compromised account. Read us the code."),
+    "protect-mom-dad-21-new-mom": ("Security alert", "Pop-up on your computer. Call now."),
+    "protect-mom-dad-36": ("Bank investigator", "Buy gift cards to secure funds."),
+}
+
+
 def get_card(slug: str) -> CardContent:
     if slug not in CARDS:
         raise KeyError(f"Unknown collateral slug: {slug}")
-    return CARDS[slug]
+    c: CardContent = dict(CARDS[slug])
+    sub = c.get("subhead", "")
+    if "image_lines" not in c:
+        lines: list[str] = []
+        if sub and len(sub) <= 95:
+            lines.append(sub)
+        elif c.get("hero_mode") == "none":
+            for bullet in c.get("bullets", [])[:2]:
+                if len(bullet) <= 120:
+                    lines.append(bullet)
+        c["image_lines"] = lines
+    if c.get("hero_mode") == "phone":
+        caller, hint = PHONE_UI.get(slug, ("Unknown caller", "Hang up if it feels rushed or scary."))
+        c.setdefault("phone_caller", caller)
+        c.setdefault("phone_hint", hint)
+    return c
 
 
 def all_slugs() -> list[str]:
