@@ -1,788 +1,685 @@
-# Evera collateral social (review draft)
-Square images are 1080×1080 JPG. Instagram portrait versions use the same slug with `-ig` before `.jpg` (1080×1350).
-Rep info, QR codes, and scan prompts were removed from artwork. Six cards used a vertical mailer layout; see manifest `issues`.
+# Evera collateral social (marketing rebuild)
+
+Square JPGs are 1080×1080; Instagram portrait files use `-ig` before `.jpg` (1080×1350).
+Artwork is rebuilt from copy + photo crops (not mailer crops). Dropped cards removed.
+
 ## Images and captions
-### `01-free-checkup-13.jpg` / `01-free-checkup-13-ig.jpg`
-
-Got a stack of passwords saved in your browser and hope that counts as a plan?
-
-We see that a lot around Bakersfield and Kern County. A free cyber checkup flags weak spots like old software, risky settings, and signs your info may already be out there.
-
-You'll get a score and a short list of next steps.
-
-Start your free cyber checkup here: https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=free-cyber-checkup&utm_content=free-checkup-13
 
 ### `01-free-checkup-18-new.jpg` / `01-free-checkup-18-new-ig.jpg`
 
-Your antivirus icon is green. Does that mean you're actually covered?
+Your antivirus icon is green. Does that mean the whole house is covered?
 
-Usually it means one piece is working. A free cyber checkup looks at the whole house: network, devices, and common scam entry points.
+Usually it means one piece is working. The free Cyber Checkup looks at the rest: your Wi-Fi, your devices and the common ways scams get in.
 
-Easy to read, no geek speak.
+Take the free 2-minute Cyber Checkup:
 
-Start your free cyber checkup here: https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=free-cyber-checkup&utm_content=free-checkup-18-new
+https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=free-cyber-checkup&utm_content=free-checkup-18-new
+
+#EveraCyber #HomeCybersecurity #CyberSafety
 
 ### `01-free-checkup-4.jpg` / `01-free-checkup-4-ig.jpg`
 
-When was the last time you looked at how healthy your home network actually is?
+When did you last check on the Wi-Fi you set up years ago?
 
-Most of us set up Wi‑Fi years ago and never think about it again. A free cyber checkup shows where your devices and accounts might be exposed, in plain language.
+The free Cyber Checkup shows where your devices and accounts might be exposed, in plain language, with a short list of what to fix first.
 
-No pressure, just a clear picture of what to fix first.
+Take the free 2-minute Cyber Checkup:
 
-Start your free cyber checkup here: https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=free-cyber-checkup&utm_content=free-checkup-4
+https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=free-cyber-checkup&utm_content=free-checkup-4
 
-### `01-free-checkup-6-new.jpg` / `01-free-checkup-6-new-ig.jpg`
-
-Thinking about upgrading your home internet gear but not sure what is safe to buy?
-
-Wrong settings on a new router can leave you wide open. Start with a free cyber checkup so you know what shape you're in before you change anything.
-
-We'll point out what matters for your setup.
-
-Start your free cyber checkup here: https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=free-cyber-checkup&utm_content=free-checkup-6-new
+#EveraCyber #HomeCybersecurity #CyberSafety
 
 ### `01-free-checkup-9.jpg` / `01-free-checkup-9-ig.jpg`
 
-Kids are on tablets, you're paying bills online, and the router is blinking in the closet.
+Kids on tablets, bills paid online, and a router blinking in the closet. Sound familiar?
 
-That is a lot of doors for bad guys to knock on. A free cyber checkup walks through the basics: devices, Wi‑Fi, email, and the simple fixes that help.
+That's a lot of ways in for a scammer. The free Cyber Checkup walks through the basics and gives you simple next steps you can keep.
 
-Takes a few minutes and you keep the report.
+Take the free 2-minute Cyber Checkup:
 
-Start your free cyber checkup here: https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=free-cyber-checkup&utm_content=free-checkup-9
+https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=free-cyber-checkup&utm_content=free-checkup-9
 
-### `02-plans-pricing-1.jpg` / `02-plans-pricing-1-ig.jpg`
-
-Antivirus alone doesn't stop the texts about fake deliveries or the "bank" calls anymore.
-
-Evera is built for homes, not office IT. You get protection on your devices plus real U.S.-based people when something feels off.
-
-We also have a limited-time Founding Member offer that locks in your pricing for the first 12 months.
-
-See plans and start here: https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=plans-pricing&utm_content=plans-pricing-1
+#EveraCyber #HomeCybersecurity #CyberSafety
 
 ### `02-plans-pricing-10-new.jpg` / `02-plans-pricing-10-new-ig.jpg`
 
-Need an extra computer covered without jumping to the next plan?
+Businesses have someone watching their computers. Why shouldn't your family?
 
-Add another PC or Mac for $15/mo. Handy when a kid heads to college with a hand‑me‑down laptop.
+Evera's team monitors your home computers, blocks threats and picks up the phone when something looks off. Plans start at $24/mo.
 
-We also have a limited-time Founding Member offer that locks in your pricing for the first 12 months.
+Start with the free 2-minute Cyber Checkup:
 
-See plans and start here: https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=plans-pricing&utm_content=plans-pricing-10-new
+https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=plans-pricing&utm_content=plans-pricing-10-new
+
+#EveraCyber #HomeCybersecurity #CyberSafety
 
 ### `02-plans-pricing-11-new.jpg` / `02-plans-pricing-11-new-ig.jpg`
 
-Traveling for work or visiting family and living on hotel Wi‑Fi?
+Think real protection for the house costs a fortune?
 
-Internet Protection ($14/mo) adds a layer when you're not on your own router.
+Personal is $24/mo (regular $29), Home+ is $49/mo (regular $59) and Family is $74/mo (regular $89), all monthly. Right now we also have a limited-time Founding Member offer that locks in your pricing for the first 12 months.
 
-We also have a limited-time Founding Member offer that locks in your pricing for the first 12 months.
+Start with the free 2-minute Cyber Checkup:
 
-See plans and start here: https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=plans-pricing&utm_content=plans-pricing-11-new
+https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=plans-pricing&utm_content=plans-pricing-11-new
+
+#EveraCyber #HomeCybersecurity #CyberSafety
 
 ### `02-plans-pricing-11.jpg` / `02-plans-pricing-11-ig.jpg`
 
-Public Wi‑Fi at coffee shops is convenient. It's also a favorite spot for snoops.
+Homework, games, group chats. How much of your kids' day happens online now?
 
-Internet Protection is $14/mo and helps keep traffic safer when you're off your home network.
+We watch the family computers for threats and harmful sites, and you can call a real person when something seems wrong.
 
-We also have a limited-time Founding Member offer that locks in your pricing for the first 12 months.
+Take the free 2-minute Cyber Checkup:
 
-See plans and start here: https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=plans-pricing&utm_content=plans-pricing-11
+https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=plans-pricing&utm_content=plans-pricing-11
+
+#EveraCyber #HomeCybersecurity #CyberSafety
 
 ### `02-plans-pricing-12.jpg` / `02-plans-pricing-12-ig.jpg`
 
-Sometimes you just need a human to remote in and fix the printer… or the virus you swear you didn't click.
+Wish someone could just remote in and fix the computer for you?
 
-Remote Tech Support is $49/mo if you want scheduled help from our U.S. team.
+Remote Tech Support is $49/mo, and our U.S. team connects to the computer and handles it with you on the phone.
 
-We also have a limited-time Founding Member offer that locks in your pricing for the first 12 months.
+Take the free 2-minute Cyber Checkup:
 
-See plans and start here: https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=plans-pricing&utm_content=plans-pricing-12
+https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=plans-pricing&utm_content=plans-pricing-12
+
+#EveraCyber #HomeCybersecurity #CyberSafety
 
 ### `02-plans-pricing-15-new.jpg` / `02-plans-pricing-15-new-ig.jpg`
 
-Data breaches hit big stores and small towns alike.
+Did your kid just get their first laptop?
 
-For $19/mo, Identity Protection helps you watch for misuse and know who to call if something slips through.
+Set it up right from day one. Our team keeps an eye on it for threats and risky sites, and you get someone to call when you're not sure.
 
-We also have a limited-time Founding Member offer that locks in your pricing for the first 12 months.
+Take the free 2-minute Cyber Checkup:
 
-See plans and start here: https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=plans-pricing&utm_content=plans-pricing-15-new
+https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=plans-pricing&utm_content=plans-pricing-15-new
+
+#EveraCyber #HomeCybersecurity #CyberSafety
 
 ### `02-plans-pricing-15.jpg` / `02-plans-pricing-15-ig.jpg`
 
-Identity theft cleanup is a nightmare you don't want to DIY.
+Just moved in and hooked everything up to the new Wi-Fi?
 
-Identity Protection is $19/mo and pairs with monitoring so you get a heads‑up early.
+A move is a good time to change the router password, update every computer and check what's connected. The free Cyber Checkup tells you where to start.
 
-We also have a limited-time Founding Member offer that locks in your pricing for the first 12 months.
+Take the free 2-minute Cyber Checkup:
 
-See plans and start here: https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=plans-pricing&utm_content=plans-pricing-15
+https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=plans-pricing&utm_content=plans-pricing-15
+
+#EveraCyber #HomeCybersecurity #CyberSafety
 
 ### `02-plans-pricing-16-new.jpg` / `02-plans-pricing-16-new-ig.jpg`
 
-That "your computer is locked" screen is scary. We see it weekly.
+How many computers are on your Wi-Fi right now?
 
-Cyber Cleanup ($99, or $49 with a plan) is a one‑time deep clean before we put ongoing protection on.
+Each one is a way in for a scammer. Evera's team watches them for you, and Home+ covers a busy household for $49/mo (regular $59).
 
-We also have a limited-time Founding Member offer that locks in your pricing for the first 12 months.
+Start with the free 2-minute Cyber Checkup:
 
-See plans and start here: https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=plans-pricing&utm_content=plans-pricing-16-new
+https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=plans-pricing&utm_content=plans-pricing-16-new
+
+#EveraCyber #HomeCybersecurity #CyberSafety
 
 ### `02-plans-pricing-16.jpg` / `02-plans-pricing-16-ig.jpg`
 
-Already infected or handing a slow PC to your parents?
+Heading out of town and planning to live on hotel Wi-Fi?
 
-Cyber Cleanup is $99 standalone, or $49 when you add a plan. We scrub malware and tighten settings.
+Internet Protection is $14/mo and adds a layer when you're off your home network.
 
-We also have a limited-time Founding Member offer that locks in your pricing for the first 12 months.
+Start with the free 2-minute Cyber Checkup:
 
-See plans and start here: https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=plans-pricing&utm_content=plans-pricing-16
+https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=plans-pricing&utm_content=plans-pricing-16
+
+#EveraCyber #HomeCybersecurity #CyberSafety
 
 ### `02-plans-pricing-17-new.jpg` / `02-plans-pricing-17-new-ig.jpg`
 
-Comparing us to the antivirus bundle that came free with your laptop?
+Is the antivirus that came with your laptop the only thing protecting it?
 
-Those tools rarely include someone you can call when a scammer is on the phone with Mom.
+Antivirus can't pick up the phone when a scammer is calling Mom. We watch the computers in your home and we answer when you call.
 
-We also have a limited-time Founding Member offer that locks in your pricing for the first 12 months.
+Take the free 2-minute Cyber Checkup:
 
-See plans and start here: https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=plans-pricing&utm_content=plans-pricing-17-new
+https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=plans-pricing&utm_content=plans-pricing-17-new
+
+#EveraCyber #HomeCybersecurity #CyberSafety
 
 ### `02-plans-pricing-17.jpg` / `02-plans-pricing-17-ig.jpg`
 
-Not sure which plan fits? Most households land on Home+.
+Ever notice the same scam text going around your whole neighborhood group chat?
 
-We can walk through device counts and habits on a quick call before you commit.
+We help local households stay a step ahead of it, with monitoring on your computers and a real person to call. Plans start at $24/mo.
 
-We also have a limited-time Founding Member offer that locks in your pricing for the first 12 months.
+Take the free 2-minute Cyber Checkup:
 
-See plans and start here: https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=plans-pricing&utm_content=plans-pricing-17
+https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=plans-pricing&utm_content=plans-pricing-17
+
+#EveraCyber #HomeCybersecurity #CyberSafety
 
 ### `02-plans-pricing-18.jpg` / `02-plans-pricing-18-ig.jpg`
 
-Bundles are only useful if you understand the bill.
+The dog counts on you. So do the kids and the computer everyone shares.
 
-Plans start at Personal $24/mo (regular $29), Home+ $49/mo ($59), and Family $74/mo ($89). Add-ons include extra computer $15/mo, Internet Protection $14/mo, Remote Tech Support $49/mo, and Identity Protection $19/mo.
+Personal $24/mo (regular $29), Home+ $49/mo (regular $59), Family $74/mo (regular $89). Add-ons are an extra computer $15/mo, Internet Protection $14/mo, Remote Tech Support $49/mo and Identity Protection $19/mo, all monthly. We also have a limited-time Founding Member offer that locks in your pricing for the first 12 months.
 
-See plans and start here: https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=plans-pricing&utm_content=plans-pricing-18
+Start with the free 2-minute Cyber Checkup:
 
-### `02-plans-pricing-2.jpg` / `02-plans-pricing-2-ig.jpg`
+https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=plans-pricing&utm_content=plans-pricing-18
 
-If you've ever paid for "computer tune‑up" software and still felt nervous clicking links, you're not alone.
-
-We bundle monitoring, scam help, and support so you're not juggling five apps.
-
-We also have a limited-time Founding Member offer that locks in your pricing for the first 12 months.
-
-See plans and start here: https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=plans-pricing&utm_content=plans-pricing-2
-
-### `02-plans-pricing-3.jpg` / `02-plans-pricing-3-ig.jpg`
-
-Wondering what you actually get for a monthly home security plan?
-
-No hidden tiers or surprise annual bills. Monthly pricing, cancel when you need to.
-
-We also have a limited-time Founding Member offer that locks in your pricing for the first 12 months.
-
-See plans and start here: https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=plans-pricing&utm_content=plans-pricing-3
+#EveraCyber #HomeCybersecurity #CyberSafety
 
 ### `02-plans-pricing-40.jpg` / `02-plans-pricing-40-ig.jpg`
 
-If you're still reading the fine print on three different security apps, pause.
+Are your parents still calling you every time a pop-up appears?
 
-Plans start at Personal $24/mo (regular $29), Home+ $49/mo ($59), and Family $74/mo ($89). Add-ons include extra computer $15/mo, Internet Protection $14/mo, Remote Tech Support $49/mo, and Identity Protection $19/mo. We also have a limited-time Founding Member offer that locks in your pricing for the first 12 months.
+Evera gives them their own team to call, and we watch their computer for threats. Identity Protection is available for $19/mo.
 
-See plans and start here: https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=plans-pricing&utm_content=plans-pricing-40
+Take the free 2-minute Cyber Checkup:
+
+https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=plans-pricing&utm_content=plans-pricing-40
+
+#EveraCyber #HomeCybersecurity #CyberSafety
 
 ### `02-plans-pricing-6.jpg` / `02-plans-pricing-6-ig.jpg`
 
-One laptop for work, one for the kids, phones on every plan… that's a Personal plan day.
+School, streaming, gaming and social media, all on the same Wi-Fi?
 
-Personal is $24/mo right now (regular $29) and covers the basics for a smaller household.
+We keep watch on the family computers and you get real people to call when something feels wrong. Personal starts at $24/mo (regular $29).
 
-We also have a limited-time Founding Member offer that locks in your pricing for the first 12 months.
+Take the free 2-minute Cyber Checkup:
 
-See plans and start here: https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=plans-pricing&utm_content=plans-pricing-6
+https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=plans-pricing&utm_content=plans-pricing-6
+
+#EveraCyber #HomeCybersecurity #CyberSafety
 
 ### `02-plans-pricing-7-new.jpg` / `02-plans-pricing-7-new-ig.jpg`
 
-Home+ is the sweet spot when you have a few computers and everyone's streaming on different apps.
+Businesses have an IT department. Who does your family call?
 
-$49/mo (regular $59). We watch for malware, risky sites, and the weird pop‑ups that show up after kids install "free" games.
+That's us. Our U.S.-based team monitors your home computers and helps when you call. Home+ is $49/mo (regular $59), and we have a limited-time Founding Member offer that locks in your pricing for the first 12 months.
 
-We also have a limited-time Founding Member offer that locks in your pricing for the first 12 months.
+Start with the free 2-minute Cyber Checkup:
 
-See plans and start here: https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=plans-pricing&utm_content=plans-pricing-7-new
+https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=plans-pricing&utm_content=plans-pricing-7-new
+
+#EveraCyber #HomeCybersecurity #CyberSafety
 
 ### `02-plans-pricing-7.jpg` / `02-plans-pricing-7-ig.jpg`
 
-Two adults, a teen, and a smart TV that still uses the factory password?
+Two adults, a teenager and a computer nobody has updated in months?
 
-That's where Home+ fits. $49/mo (regular $59) for more devices and tighter coverage.
+Home+ covers a household like that for $49/mo (regular $59), with our team watching for threats and answering when you call.
 
-We also have a limited-time Founding Member offer that locks in your pricing for the first 12 months.
+Start with the free 2-minute Cyber Checkup:
 
-See plans and start here: https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=plans-pricing&utm_content=plans-pricing-7
+https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=plans-pricing&utm_content=plans-pricing-7
+
+#EveraCyber #HomeCybersecurity #CyberSafety
 
 ### `02-plans-pricing-9-new.jpg` / `02-plans-pricing-9-new-ig.jpg`
 
-Grandma's iPad, your work laptop, and the gaming PC in the back room all count.
+Grandma's laptop, your work computer and the gaming PC in the back room. Who's watching all of them?
 
-Family is $74/mo (regular $89) when you want everyone under one roof covered.
+Family is $74/mo (regular $89) and covers the whole house. We also have a limited-time Founding Member offer that locks in your pricing for the first 12 months.
 
-We also have a limited-time Founding Member offer that locks in your pricing for the first 12 months.
+Start with the free 2-minute Cyber Checkup:
 
-See plans and start here: https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=plans-pricing&utm_content=plans-pricing-9-new
+https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=plans-pricing&utm_content=plans-pricing-9-new
+
+#EveraCyber #HomeCybersecurity #CyberSafety
 
 ### `03-protect-mom-dad-14-2.jpg` / `03-protect-mom-dad-14-2-ig.jpg`
 
-Ever get a text from Mom that just says "Is this real?" with a screenshot?
+Ever get a screenshot from Mom with just "Is this real?"
 
-You're not alone. Evera gives parents direct access to U.S.-based help so you don't have to troubleshoot after dinner every night.
+Evera gives your parents their own U.S.-based team to ask, so you're not troubleshooting after dinner every night.
 
-Start your free cyber checkup here: https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=protect-mom-dad&utm_content=protect-mom-dad-14-2
+Take the free 2-minute Cyber Checkup:
+
+https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=protect-mom-dad&utm_content=protect-mom-dad-14-2
+
+#EveraCyber #HomeCybersecurity #CyberSafety
 
 ### `03-protect-mom-dad-14.jpg` / `03-protect-mom-dad-14-ig.jpg`
 
-Dad got a pop‑up that said "call Microsoft now" and he almost did.
+Who do your parents call when a scary message pops up?
 
-Those screens are designed to panic people. With Evera he can call us first and we'll talk him through it.
+If the answer is you, there's a better option. We watch their computer and they can call us first, any time something looks off.
 
-Start your free cyber checkup here: https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=protect-mom-dad&utm_content=protect-mom-dad-14
+Take the free 2-minute Cyber Checkup:
+
+https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=protect-mom-dad&utm_content=protect-mom-dad-14
+
+#EveraCyber #HomeCybersecurity #CyberSafety
 
 ### `03-protect-mom-dad-19-new.jpg` / `03-protect-mom-dad-19-new-ig.jpg`
 
-If your folks still forward every chain email "just in case," they need a safer outlet.
+Do your folks forward every chain email "just in case"?
 
-They can forward suspicious stuff to us or call. We would rather answer a silly question than help after money is gone.
+Now they can forward the suspicious ones to us instead. We'd rather answer a quick question than help after money is gone.
 
-Start your free cyber checkup here: https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=protect-mom-dad&utm_content=protect-mom-dad-19-new
+Take the free 2-minute Cyber Checkup:
+
+https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=protect-mom-dad&utm_content=protect-mom-dad-19-new
+
+#EveraCyber #HomeCybersecurity #CyberSafety
 
 ### `03-protect-mom-dad-19.jpg` / `03-protect-mom-dad-19-ig.jpg`
 
-Parents want to bank online but they're nervous about scams.
+Are the grandkids on Grandma's computer every time they visit?
 
-We help them spot fake alerts and know when to hang up. Protection runs in the background while they live their lives.
+We keep that computer watched and updated, so a game download doesn't turn into a problem for everyone.
 
-Start your free cyber checkup here: https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=protect-mom-dad&utm_content=protect-mom-dad-19
+Take the free 2-minute Cyber Checkup:
+
+https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=protect-mom-dad&utm_content=protect-mom-dad-19
+
+#EveraCyber #HomeCybersecurity #CyberSafety
 
 ### `03-protect-mom-dad-20-new.jpg` / `03-protect-mom-dad-20-new-ig.jpg`
 
-Dad proud he fixed the printer himself… but installed three toolbars in the process?
+Dad fixed the printer himself and installed three toolbars along the way?
 
-We've cleaned up worse. A Family plan covers their PC and someone they can talk to without feeling dumb.
+Give him a team that can clean it up and that he can call without feeling silly.
 
-Start your free cyber checkup here: https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=protect-mom-dad&utm_content=protect-mom-dad-20-new
+Take the free 2-minute Cyber Checkup:
+
+https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=protect-mom-dad&utm_content=protect-mom-dad-20-new
+
+#EveraCyber #HomeCybersecurity #CyberSafety
 
 ### `03-protect-mom-dad-20.jpg` / `03-protect-mom-dad-20-ig.jpg`
 
-Remote access scams target seniors because they're polite on the phone.
+Does the same scam text make the rounds on your street every few weeks?
 
-Teach Mom one rule: if someone wants to control the screen, hang up and call Evera.
+Teach your parents one rule: if someone wants control of the screen, hang up and call us.
 
-Start your free cyber checkup here: https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=protect-mom-dad&utm_content=protect-mom-dad-20
+Take the free 2-minute Cyber Checkup:
+
+https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=protect-mom-dad&utm_content=protect-mom-dad-20
+
+#EveraCyber #HomeCybersecurity #CyberSafety
 
 ### `03-protect-mom-dad-21-new-dad.jpg` / `03-protect-mom-dad-21-new-dad-ig.jpg`
 
-Dad answered a call about his "compromised account" and almost gave them a code.
+Dad got a call about his "compromised account" and almost read them a code?
 
-Hang up is always allowed. With Evera he can verify the story with us before he acts.
+He can always hang up. With Evera, he can call us and check the story before he does anything.
 
-Start your free cyber checkup here: https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=protect-mom-dad&utm_content=protect-mom-dad-21-new-dad
+Take the free 2-minute Cyber Checkup:
+
+https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=protect-mom-dad&utm_content=protect-mom-dad-21-new-dad
+
+#EveraCyber #HomeCybersecurity #CyberSafety
 
 ### `03-protect-mom-dad-21-new-mom.jpg` / `03-protect-mom-dad-21-new-mom-ig.jpg`
 
-Something weird popped up on Mom's computer and she called you first.
+Something weird popped up on Mom's computer, and she called you first. Again?
 
-What if she had a number where someone actually answers? Evera is built for that moment.
+What if she had a number where someone who knows computers actually answers? That's what we do.
 
-Start your free cyber checkup here: https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=protect-mom-dad&utm_content=protect-mom-dad-21-new-mom
+Take the free 2-minute Cyber Checkup:
+
+https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=protect-mom-dad&utm_content=protect-mom-dad-21-new-mom
+
+#EveraCyber #HomeCybersecurity #CyberSafety
 
 ### `03-protect-mom-dad-26.jpg` / `03-protect-mom-dad-26-ig.jpg`
 
-You live in Kern County but your parents are across town or across the state.
+Live in Kern County while your parents are across town or across the state?
 
-Distance makes tech support harder. Evera gives them the same help you'd want nearby.
+If anyone asks them for remote access, the answer is no. They can call our team instead and we'll check it with them.
 
-Start your free cyber checkup here: https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=protect-mom-dad&utm_content=protect-mom-dad-26
+Take the free 2-minute Cyber Checkup:
+
+https://www.everacyber.com/bakersfield?utm_source=facebook&utm_medium=social&utm_campaign=protect-mom-dad&utm_content=protect-mom-dad-26
+
+#EveraCyber #HomeCybersecurity #KernCounty
 
 ### `03-protect-mom-dad-36.jpg` / `03-protect-mom-dad-36-ig.jpg`
 
-Gift card scams sound obvious until it's your parent on the phone with a "bank investigator."
+Your parent's on the phone with a "bank investigator" who wants gift cards?
 
-We train families on the scripts scammers use and block a lot of the junk before it lands.
+That's a scam every time. Save our number in their phone so they have someone to call before they buy anything.
 
-Start your free cyber checkup here: https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=protect-mom-dad&utm_content=protect-mom-dad-36
+Take the free 2-minute Cyber Checkup:
+
+https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=protect-mom-dad&utm_content=protect-mom-dad-36
+
+#EveraCyber #HomeCybersecurity #CyberSafety
+
+_Suggested schedule: 2025-11-15_
 
 ### `03-protect-mom-dad-37.jpg` / `03-protect-mom-dad-37-ig.jpg`
 
-Mom loves Facebook marketplace deals. So do thieves.
+Can't be at Mom's house every time something goes wrong with the computer?
 
-We help her spot fake buyers and shady links without taking her off the site entirely.
+We can help remotely, and she gets a real person on the phone instead of a chatbot.
 
-Start your free cyber checkup here: https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=protect-mom-dad&utm_content=protect-mom-dad-37
+Take the free 2-minute Cyber Checkup:
+
+https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=protect-mom-dad&utm_content=protect-mom-dad-37
+
+#EveraCyber #HomeCybersecurity #CyberSafety
 
 ### `03-protect-mom-dad-38.jpg` / `03-protect-mom-dad-38-ig.jpg`
 
-Ever notice how patient you have to be when explaining two‑factor codes to Dad?
+How many times have you explained two-step codes to Dad?
 
-Our support team does that every day, calmly, without making anyone feel small.
+Our team will do it as many times as he needs, patiently, and help him spot a scam call before it costs him.
 
-Start your free cyber checkup here: https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=protect-mom-dad&utm_content=protect-mom-dad-38
+Take the free 2-minute Cyber Checkup:
+
+https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=protect-mom-dad&utm_content=protect-mom-dad-38
+
+#EveraCyber #HomeCybersecurity #CyberSafety
 
 ### `03-protect-mom-dad-39.jpg` / `03-protect-mom-dad-39-ig.jpg`
 
-You can't put a firewall between your parents and every scammer who calls.
+You can't stand between your parents and every scammer who calls.
 
-You can put Evera on their devices so there's backup when you're not in the room.
+You can give them a team that watches their computer and answers the phone when you're not around.
 
-Start your free cyber checkup here: https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=protect-mom-dad&utm_content=protect-mom-dad-39
+Take the free 2-minute Cyber Checkup:
+
+https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=protect-mom-dad&utm_content=protect-mom-dad-39
+
+#EveraCyber #HomeCybersecurity #CyberSafety
 
 ### `03-protect-mom-dad-8-new.jpg` / `03-protect-mom-dad-8-new-ig.jpg`
 
-Mom still writes passwords on a sticky note by the monitor?
+Does Mom still keep her passwords on a sticky note by the monitor?
 
-Instead of playing unpaid IT, give her a team that answers the phone. Evera blocks common threats and lets her ask a real person before she clicks.
+Instead of playing unpaid IT, give her a team that answers the phone and helps her check a message before she clicks.
 
-Start your free cyber checkup here: https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=protect-mom-dad&utm_content=protect-mom-dad-8-new
+Take the free 2-minute Cyber Checkup:
+
+https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=protect-mom-dad&utm_content=protect-mom-dad-8-new
+
+#EveraCyber #HomeCybersecurity #CyberSafety
 
 ### `04-scam-help-23-1.jpg` / `04-scam-help-23-1-ig.jpg`
 
-That text about a "suspicious charge" showed up while you were in line at the store.
+Did a "suspicious charge" text show up while you were in line at the store?
 
-Scammers love fake fraud alerts because they make you tap before you think. Don't click. Call your bank with the number on your card, or ask us if you're stuck.
+Fake fraud alerts want you to tap before you think. Don't use the link. Call your bank on the number on the back of your card.
 
-Not sure if a message is real? Ask us first: https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=scam-help&utm_content=scam-help-23-1
+Take the free 2-minute Cyber Checkup:
+
+https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=scam-help&utm_content=scam-help-23-1
+
+#EveraCyber #HomeCybersecurity #CyberSafety
 
 ### `04-scam-help-23-2.jpg` / `04-scam-help-23-2-ig.jpg`
 
-Same scary message, different phone number every time?
+Got a text saying your account is locked and you need to click right now?
 
-That's the pattern. Real banks don't rush you through links in a panic text. Screenshot it and ask Evera if you want a second opinion.
+That rush is the trick. Close the message and log in the way you normally do. If it's real, you'll see it there.
 
-Not sure if a message is real? Ask us first: https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=scam-help&utm_content=scam-help-23-2
+Take the free 2-minute Cyber Checkup:
+
+https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=scam-help&utm_content=scam-help-23-2
+
+#EveraCyber #HomeCybersecurity #CyberSafety
 
 ### `04-scam-help-24.jpg` / `04-scam-help-24-ig.jpg`
 
-Someone on the phone said they're from fraud department and need you to "verify" your PIN.
+Did "Microsoft" call to say your computer has a virus?
 
-Hang up. No legit company asks for that. If you're shaking after the call, we're here to walk through what happened.
+Hang up. Microsoft doesn't call people about viruses. Don't install anything or let them connect to your computer.
 
-Not sure if a message is real? Ask us first: https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=scam-help&utm_content=scam-help-24
+Take the free 2-minute Cyber Checkup:
 
-### `04-scam-help-25.jpg` / `04-scam-help-25-ig.jpg`
+https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=scam-help&utm_content=scam-help-24
 
-Email says your package is held unless you pay a small fee today?
-
-Check the tracking on the store's real site, not the link in the message. When it still feels weird, ask us.
-
-Not sure if a message is real? Ask us first: https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=scam-help&utm_content=scam-help-25
+#EveraCyber #HomeCybersecurity #CyberSafety
 
 ### `04-scam-help-33.jpg` / `04-scam-help-33-ig.jpg`
 
-Got a DM from a "friend" asking for money on a new account?
+Strange email, odd text or a pop-up you don't trust?
 
-Cloned profiles are common. Message your friend another way before you send anything.
+Evera customers can send it to us and ask before they click. That one step stops a lot of trouble.
 
-Not sure if a message is real? Ask us first: https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=scam-help&utm_content=scam-help-33
+Take the free 2-minute Cyber Checkup:
+
+https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=scam-help&utm_content=scam-help-33
+
+#EveraCyber #HomeCybersecurity #CyberSafety
 
 ### `04-scam-help-34.jpg` / `04-scam-help-34-ig.jpg`
 
-Utility company threatening shutoff unless you pay with crypto?
+Utility company threatening a shutoff unless you pay with crypto or gift cards today?
 
-That's a scam. Real utilities send paper bills and give you time. Call the number on your bill, not the text.
+That's a scam. Call the number on your last bill, not the one in the message.
 
-Not sure if a message is real? Ask us first: https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=scam-help&utm_content=scam-help-34
+Take the free 2-minute Cyber Checkup:
+
+https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=scam-help&utm_content=scam-help-34
+
+#EveraCyber #HomeCybersecurity #CyberSafety
 
 ### `04-scam-help-35.jpg` / `04-scam-help-35-ig.jpg`
 
-Not sure if you're being rushed, scared, or surprised into acting?
+Feel rushed, scared or surprised by a call or text?
 
-Those three feelings are the scam toolkit. Pause and ask Evera before you pay, install, or share a code.
+Those feelings are what scammers are after. Pause, and ask someone you trust before you pay, install anything or share a code.
 
-Not sure if a message is real? Ask us first: https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=scam-help&utm_content=scam-help-35
+Take the free 2-minute Cyber Checkup:
 
-### `05-free-scam-guide-22-amazon.jpg` / `05-free-scam-guide-22-amazon-ig.jpg`
+https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=scam-help&utm_content=scam-help-35
 
-Your phone says "Amazon" is calling. Could still be a stranger with a fake caller ID.
-
-Scammers spoof banks like Amazon all the time. They may know your name or last charge. That doesn't prove it's real.
-
-Hang up and call the number on your card, or ask Evera before you share anything.
-
-Start your free cyber checkup here: https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=free-scam-guide&utm_content=free-scam-guide-22-amazon
-
-### `05-free-scam-guide-22-apple.jpg` / `05-free-scam-guide-22-apple-ig.jpg`
-
-Your phone says "Apple" is calling. Could still be a stranger with a fake caller ID.
-
-Scammers spoof banks like Apple all the time. They may know your name or last charge. That doesn't prove it's real.
-
-Hang up and call the number on your card, or ask Evera before you share anything.
-
-Start your free cyber checkup here: https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=free-scam-guide&utm_content=free-scam-guide-22-apple
-
-### `05-free-scam-guide-22-bankofthesierra.jpg` / `05-free-scam-guide-22-bankofthesierra-ig.jpg`
-
-Your phone says "Bank of the Sierra" is calling. Could still be a stranger with a fake caller ID.
-
-Scammers spoof banks like Bank of the Sierra all the time. They may know your name or last charge. That doesn't prove it's real.
-
-Hang up and call the number on your card, or ask Evera before you share anything.
-
-Start your free cyber checkup here: https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=free-scam-guide&utm_content=free-scam-guide-22-bankofthesierra
-
-### `05-free-scam-guide-22-bofa.jpg` / `05-free-scam-guide-22-bofa-ig.jpg`
-
-Your phone says "Bank of America" is calling. Could still be a stranger with a fake caller ID.
-
-Scammers spoof banks like Bank of America all the time. They may know your name or last charge. That doesn't prove it's real.
-
-Hang up and call the number on your card, or ask Evera before you share anything.
-
-Start your free cyber checkup here: https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=free-scam-guide&utm_content=free-scam-guide-22-bofa
-
-### `05-free-scam-guide-22-capitalone.jpg` / `05-free-scam-guide-22-capitalone-ig.jpg`
-
-Your phone says "Capital One" is calling. Could still be a stranger with a fake caller ID.
-
-Scammers spoof banks like Capital One all the time. They may know your name or last charge. That doesn't prove it's real.
-
-Hang up and call the number on your card, or ask Evera before you share anything.
-
-Start your free cyber checkup here: https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=free-scam-guide&utm_content=free-scam-guide-22-capitalone
-
-### `05-free-scam-guide-22-chase.jpg` / `05-free-scam-guide-22-chase-ig.jpg`
-
-Your phone says "Chase" is calling. Could still be a stranger with a fake caller ID.
-
-Scammers spoof banks like Chase all the time. They may know your name or last charge. That doesn't prove it's real.
-
-Hang up and call the number on your card, or ask Evera before you share anything.
-
-Start your free cyber checkup here: https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=free-scam-guide&utm_content=free-scam-guide-22-chase
-
-### `05-free-scam-guide-22-firsthorizon.jpg` / `05-free-scam-guide-22-firsthorizon-ig.jpg`
-
-Your phone says "First Horizon" is calling. Could still be a stranger with a fake caller ID.
-
-Scammers spoof banks like First Horizon all the time. They may know your name or last charge. That doesn't prove it's real.
-
-Hang up and call the number on your card, or ask Evera before you share anything.
-
-Start your free cyber checkup here: https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=free-scam-guide&utm_content=free-scam-guide-22-firsthorizon
-
-### `05-free-scam-guide-22-firstsouthfinancial.jpg` / `05-free-scam-guide-22-firstsouthfinancial-ig.jpg`
-
-Your phone says "First South Financial" is calling. Could still be a stranger with a fake caller ID.
-
-Scammers spoof banks like First South Financial all the time. They may know your name or last charge. That doesn't prove it's real.
-
-Hang up and call the number on your card, or ask Evera before you share anything.
-
-Start your free cyber checkup here: https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=free-scam-guide&utm_content=free-scam-guide-22-firstsouthfinancial
-
-### `05-free-scam-guide-22-irs.jpg` / `05-free-scam-guide-22-irs-ig.jpg`
-
-Your phone says "the IRS" is calling. Could still be a stranger with a fake caller ID.
-
-Scammers spoof banks like the IRS all the time. They may know your name or last charge. That doesn't prove it's real.
-
-Hang up and call the number on your card, or ask Evera before you share anything.
-
-Start your free cyber checkup here: https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=free-scam-guide&utm_content=free-scam-guide-22-irs
-
-### `05-free-scam-guide-22-ms.jpg` / `05-free-scam-guide-22-ms-ig.jpg`
-
-Your phone says "Microsoft" is calling. Could still be a stranger with a fake caller ID.
-
-Scammers spoof banks like Microsoft all the time. They may know your name or last charge. That doesn't prove it's real.
-
-Hang up and call the number on your card, or ask Evera before you share anything.
-
-Start your free cyber checkup here: https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=free-scam-guide&utm_content=free-scam-guide-22-ms
-
-### `05-free-scam-guide-22-ofcu.jpg` / `05-free-scam-guide-22-ofcu-ig.jpg`
-
-Your phone says "your credit union" is calling. Could still be a stranger with a fake caller ID.
-
-Scammers spoof banks like your credit union all the time. They may know your name or last charge. That doesn't prove it's real.
-
-Hang up and call the number on your card, or ask Evera before you share anything.
-
-Start your free cyber checkup here: https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=free-scam-guide&utm_content=free-scam-guide-22-ofcu
-
-### `05-free-scam-guide-22-pp.jpg` / `05-free-scam-guide-22-pp-ig.jpg`
-
-Your phone says "PayPal" is calling. Could still be a stranger with a fake caller ID.
-
-Scammers spoof banks like PayPal all the time. They may know your name or last charge. That doesn't prove it's real.
-
-Hang up and call the number on your card, or ask Evera before you share anything.
-
-Start your free cyber checkup here: https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=free-scam-guide&utm_content=free-scam-guide-22-pp
-
-### `05-free-scam-guide-22-regions.jpg` / `05-free-scam-guide-22-regions-ig.jpg`
-
-Your phone says "Regions Bank" is calling. Could still be a stranger with a fake caller ID.
-
-Scammers spoof banks like Regions Bank all the time. They may know your name or last charge. That doesn't prove it's real.
-
-Hang up and call the number on your card, or ask Evera before you share anything.
-
-Start your free cyber checkup here: https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=free-scam-guide&utm_content=free-scam-guide-22-regions
-
-### `05-free-scam-guide-22-ssa.jpg` / `05-free-scam-guide-22-ssa-ig.jpg`
-
-Your phone says "Social Security" is calling. Could still be a stranger with a fake caller ID.
-
-Scammers spoof banks like Social Security all the time. They may know your name or last charge. That doesn't prove it's real.
-
-Hang up and call the number on your card, or ask Evera before you share anything.
-
-Start your free cyber checkup here: https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=free-scam-guide&utm_content=free-scam-guide-22-ssa
-
-### `05-free-scam-guide-22-truist.jpg` / `05-free-scam-guide-22-truist-ig.jpg`
-
-Your phone says "Truist" is calling. Could still be a stranger with a fake caller ID.
-
-Scammers spoof banks like Truist all the time. They may know your name or last charge. That doesn't prove it's real.
-
-Hang up and call the number on your card, or ask Evera before you share anything.
-
-Start your free cyber checkup here: https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=free-scam-guide&utm_content=free-scam-guide-22-truist
-
-### `05-free-scam-guide-22-usbank.jpg` / `05-free-scam-guide-22-usbank-ig.jpg`
-
-Your phone says "U.S. Bank" is calling. Could still be a stranger with a fake caller ID.
-
-Scammers spoof banks like U.S. Bank all the time. They may know your name or last charge. That doesn't prove it's real.
-
-Hang up and call the number on your card, or ask Evera before you share anything.
-
-Start your free cyber checkup here: https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=free-scam-guide&utm_content=free-scam-guide-22-usbank
-
-### `05-free-scam-guide-22-valleystrong.jpg` / `05-free-scam-guide-22-valleystrong-ig.jpg`
-
-Your phone says "Valley Strong" is calling. Could still be a stranger with a fake caller ID.
-
-Scammers spoof banks like Valley Strong all the time. They may know your name or last charge. That doesn't prove it's real.
-
-Hang up and call the number on your card, or ask Evera before you share anything.
-
-Start your free cyber checkup here: https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=free-scam-guide&utm_content=free-scam-guide-22-valleystrong
-
-### `05-free-scam-guide-22-wellsfargo.jpg` / `05-free-scam-guide-22-wellsfargo-ig.jpg`
-
-Your phone says "Wells Fargo" is calling. Could still be a stranger with a fake caller ID.
-
-Scammers spoof banks like Wells Fargo all the time. They may know your name or last charge. That doesn't prove it's real.
-
-Hang up and call the number on your card, or ask Evera before you share anything.
-
-Start your free cyber checkup here: https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=free-scam-guide&utm_content=free-scam-guide-22-wellsfargo
+#EveraCyber #HomeCybersecurity #CyberSafety
 
 ### `05-free-scam-guide-22.jpg` / `05-free-scam-guide-22-ig.jpg`
 
-Bank on the caller ID doesn't mean bank on the phone.
+Your phone says your bank is calling. Is it really them?
 
-We put together a free scam guide with the scripts we hear every week. Read it before the next "fraud alert" text hits.
+Caller ID can be faked, and scammers may already know your name. Hang up and call the number on the back of your card.
 
-Start your free cyber checkup here: https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=free-scam-guide&utm_content=free-scam-guide-22
+Take the free 2-minute Cyber Checkup:
+
+https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=free-scam-guide&utm_content=free-scam-guide-22
+
+#EveraCyber #HomeCybersecurity #CyberSafety
 
 ### `05-free-scam-guide-27.jpg` / `05-free-scam-guide-27-ig.jpg`
 
-IRS season brings real refunds and fake agents demanding gift cards.
+A text from a new number says it's your kid with a broken phone and needs money?
 
-The IRS does not threaten arrest over the phone. Save our number for when a relative forwards you a scary voicemail.
+Call your child on the number you already have before you send anything.
 
-Start your free cyber checkup here: https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=free-scam-guide&utm_content=free-scam-guide-27
+Take the free 2-minute Cyber Checkup:
+
+https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=free-scam-guide&utm_content=free-scam-guide-27
+
+#EveraCyber #HomeCybersecurity #CyberSafety
 
 ### `05-free-scam-guide-28.jpg` / `05-free-scam-guide-28-ig.jpg`
 
-Microsoft will not call because your home PC sent an error.
+Would you know if a voice on the phone wasn't really your child?
 
-Those calls are scams. If someone wants remote access, hang up and tell us what they said.
+Scammers can copy voices from short clips online. Hang up and call your child back on their real number.
 
-Start your free cyber checkup here: https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=free-scam-guide&utm_content=free-scam-guide-28
+Take the free 2-minute Cyber Checkup:
+
+https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=free-scam-guide&utm_content=free-scam-guide-28
+
+#EveraCyber #HomeCybersecurity #CyberSafety
 
 ### `05-free-scam-guide-29.jpg` / `05-free-scam-guide-29-ig.jpg`
 
-Amazon "account problem" texts are everywhere in Kern County right now.
+Has someone on the phone asked you to pay with gift cards?
 
-Log in by typing amazon.com yourself. Don't tap the link in the message.
+That's a scam every time. No real company, bank or government office takes payment that way. Hang up.
 
-Start your free cyber checkup here: https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=free-scam-guide&utm_content=free-scam-guide-29
+Bakersfield, take the free 2-minute Cyber Checkup:
+
+https://www.everacyber.com/bakersfield?utm_source=facebook&utm_medium=social&utm_campaign=free-scam-guide&utm_content=free-scam-guide-29
+
+#EveraCyber #HomeCybersecurity #KernCounty
 
 ### `05-free-scam-guide-30-1-dad.jpg` / `05-free-scam-guide-30-1-dad-ig.jpg`
 
-Dad almost bought gift cards because someone said his Social Security number was frozen.
+Did Dad get a call from "the bank" asking for the code they just texted him?
 
-Government agencies don't work that way. Share the guide with him before the next call.
+That code is the key to his account. A real bank won't ask for it. Hang up and call the number on his card.
 
-Start your free cyber checkup here: https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=free-scam-guide&utm_content=free-scam-guide-30-1-dad
+Take the free 2-minute Cyber Checkup:
+
+https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=free-scam-guide&utm_content=free-scam-guide-30-1-dad
+
+#EveraCyber #HomeCybersecurity #CyberSafety
 
 ### `05-free-scam-guide-30-1-mom.jpg` / `05-free-scam-guide-30-1-mom-ig.jpg`
 
-Mom forwarded a "free prize" email and asked if it's legit.
+Did Mom get a call from "the bank" asking for the code they just texted her?
 
-That's exactly when to step in. Our guide walks through the red flags she can spot herself.
+That code is the key to her account. A real bank won't ask for it. Hang up and call the number on her card.
 
-Start your free cyber checkup here: https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=free-scam-guide&utm_content=free-scam-guide-30-1-mom
+Take the free 2-minute Cyber Checkup:
+
+https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=free-scam-guide&utm_content=free-scam-guide-30-1-mom
+
+#EveraCyber #HomeCybersecurity #CyberSafety
 
 ### `05-free-scam-guide-30-2.jpg` / `05-free-scam-guide-30-2-ig.jpg`
 
-Kids learn scams from TikTok. Parents learn them the hard way.
+The caller knew your name and your bank. Does that make it real?
 
-Our free scam guide is short enough to read at the kitchen table together.
+No. That information is easy to find. Never share a code someone texted you, no matter what they already know.
 
-Start your free cyber checkup here: https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=free-scam-guide&utm_content=free-scam-guide-30-2
+Take the free 2-minute Cyber Checkup:
 
-### `05-free-scam-guide-30-3.jpg` / `05-free-scam-guide-30-3-ig.jpg`
+https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=free-scam-guide&utm_content=free-scam-guide-30-2
 
-Neighborhood group chat is great until someone posts a sketchy link "for a deal."
-
-The guide covers how fake discounts steal login info.
-
-Start your free cyber checkup here: https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=free-scam-guide&utm_content=free-scam-guide-30-3
+#EveraCyber #HomeCybersecurity #CyberSafety
 
 ### `05-free-scam-guide-31.jpg` / `05-free-scam-guide-31-ig.jpg`
 
-You don't need to be paranoid. You need a checklist.
+Got a text that your package is on hold?
 
-Download the free scam guide and keep it where everyone in the house can see it.
+Don't tap the link. Check the order on the store's own site or app.
 
-Start your free cyber checkup here: https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=free-scam-guide&utm_content=free-scam-guide-31
+Take the free 2-minute Cyber Checkup:
+
+https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=free-scam-guide&utm_content=free-scam-guide-31
+
+#EveraCyber #HomeCybersecurity #CyberSafety
+
+_Suggested schedule: 2025-11-01_
 
 ### `06-talk-to-a-real-person-8.jpg` / `06-talk-to-a-real-person-8-ig.jpg`
 
-Tired of chatbots that send you in circles when your computer is acting up?
+Tired of chatbots that send you in circles when the computer acts up?
 
-Evera answers with real people in the U.S. You can call when something feels wrong, not just when software throws an error code.
+With Evera you call a real person in the U.S., whether it's an error message or a text that just feels wrong.
 
-That's the whole point of how we're set up.
+Take the free 2-minute Cyber Checkup:
 
-Start your free cyber checkup here: https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=talk-to-a-real-person&utm_content=talk-to-a-real-person-8
+https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=talk-to-a-real-person&utm_content=talk-to-a-real-person-8
+
+#EveraCyber #HomeCybersecurity #CyberSafety
 
 ### `07-launch-special-l1.jpg` / `07-launch-special-l1-ig.jpg`
 
-Evera is new in town, but the scams aren't.
+New in town, and the scams sure aren't.
 
-We combine always‑on protection with U.S.-based support so you're not on hold with someone reading a script overseas.
+Evera's team watches the computers in your home, blocks threats and answers the phone. We also have a limited-time Founding Member offer that locks in your pricing for the first 12 months.
 
-Start your free cyber checkup here: https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=launch-special&utm_content=launch-special-l1
+Start with the free 2-minute Cyber Checkup:
+
+https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=launch-special&utm_content=launch-special-l1
+
+#EveraCyber #HomeCybersecurity #CyberSafety
 
 ### `07-launch-special-l10.jpg` / `07-launch-special-l10-ig.jpg`
 
-We're building Evera for the long haul in communities we live in.
+Scams, malware and stolen passwords. Who's watching for them at your house?
 
-We also have a limited-time Founding Member offer that locks in your pricing for the first 12 months. Come say hi and see if we're a good fit.
+That's our job. We monitor your home computers and help when something looks off.
 
-Start your free cyber checkup here: https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=launch-special&utm_content=launch-special-l10
+Take the free 2-minute Cyber Checkup:
+
+https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=launch-special&utm_content=launch-special-l10
+
+#EveraCyber #HomeCybersecurity #CyberSafety
 
 ### `07-launch-special-l2-bak.jpg` / `07-launch-special-l2-bak-ig.jpg`
 
-Bakersfield neighbors, home Wi‑Fi shouldn't be the weak link while everything else in the house is smart.
+Bakersfield, who do you call when the family computer starts acting strange?
 
-Evera is live in Kern County with plans for real families and real phones you can call. We also have a limited-time Founding Member offer that locks in your pricing for the first 12 months.
+Evera is now serving Kern County. Our team watches your home computers and answers the phone. We also have a limited-time Founding Member offer that locks in your pricing for the first 12 months.
 
-Start your free cyber checkup here: https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=launch-special&utm_content=launch-special-l2-bak
+Start with the free 2-minute Cyber Checkup:
+
+https://www.everacyber.com/bakersfield?utm_source=facebook&utm_medium=social&utm_campaign=launch-special&utm_content=launch-special-l2-bak
+
+#EveraCyber #HomeCybersecurity #KernCounty
 
 ### `07-launch-special-l2-mem1.jpg` / `07-launch-special-l2-mem1-ig.jpg`
 
-Memphis friends, did you get another sketchy text about a missed delivery today?
+Memphis, did another sketchy text show up on your phone today?
 
-We're local now, and we built Evera for households that want protection without a corporate help desk. We also have a limited-time Founding Member offer that locks in your pricing for the first 12 months.
+Evera is now serving Memphis households. Personal $24/mo (regular $29), Home+ $49/mo (regular $59), Family $74/mo (regular $89), all monthly, with a limited-time Founding Member offer that locks in your pricing for the first 12 months.
 
-Personal $24/mo, Home+ $49/mo, Family $74/mo, all monthly.
+Take the free 2-minute Cyber Checkup:
 
-Start your free cyber checkup here: https://www.everacyber.com/memphis1?utm_source=facebook&utm_medium=social&utm_campaign=launch-special&utm_content=launch-special-l2-mem1
+https://www.everacyber.com/memphis?utm_source=facebook&utm_medium=social&utm_campaign=launch-special&utm_content=launch-special-l2-mem1
 
-### `07-launch-special-l2-mem2.jpg` / `07-launch-special-l2-mem2-ig.jpg`
+#EveraCyber #HomeCybersecurity #Memphis
 
-Memphis friends, did you get another sketchy text about a missed delivery today?
-
-We're local now, and we built Evera for households that want protection without a corporate help desk. We also have a limited-time Founding Member offer that locks in your pricing for the first 12 months.
-
-Personal $24/mo, Home+ $49/mo, Family $74/mo, all monthly.
-
-Start your free cyber checkup here: https://www.everacyber.com/memphis1?utm_source=facebook&utm_medium=social&utm_campaign=launch-special&utm_content=launch-special-l2-mem2
-
-### `07-launch-special-l3.jpg` / `07-launch-special-l3-ig.jpg`
-
-Launch week is a good time to finally deal with the old laptop in the guest room.
-
-Founding Member pricing locks your rate for the first 12 months while we grow locally.
-
-Start your free cyber checkup here: https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=launch-special&utm_content=launch-special-l3
+_Suggested schedule: 2025-11-01_
 
 ### `07-launch-special-l4.jpg` / `07-launch-special-l4-ig.jpg`
 
-You shouldn't need a computer science degree to keep your family safe online.
+Been meaning to deal with the old laptop in the guest room?
 
-We keep the tech running quietly and pick up the phone when you're worried.
+Start with a free checkup, then pick a plan. We also have a limited-time Founding Member offer that locks in your pricing for the first 12 months.
 
-Start your free cyber checkup here: https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=launch-special&utm_content=launch-special-l4
+Start with the free 2-minute Cyber Checkup:
+
+https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=launch-special&utm_content=launch-special-l4
+
+#EveraCyber #HomeCybersecurity #CyberSafety
 
 ### `07-launch-special-l5.jpg` / `07-launch-special-l5-ig.jpg`
 
-If you've been waiting for a simpler option than piecing together five apps, this is it.
+Tired of piecing together five different security subscriptions?
 
-Plans start at Personal $24/mo (regular $29), Home+ $49/mo ($59), and Family $74/mo ($89). Add-ons include extra computer $15/mo, Internet Protection $14/mo, Remote Tech Support $49/mo, and Identity Protection $19/mo. We also have a limited-time Founding Member offer that locks in your pricing for the first 12 months.
+Evera's team handles the monitoring, protection and support for you. Personal $24/mo (regular $29), Home+ $49/mo (regular $59), Family $74/mo (regular $89), with a limited-time Founding Member offer that locks in your pricing for the first 12 months.
 
-Start your free cyber checkup here: https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=launch-special&utm_content=launch-special-l5
+Start with the free 2-minute Cyber Checkup:
+
+https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=launch-special&utm_content=launch-special-l5
+
+#EveraCyber #HomeCybersecurity #CyberSafety
 
 ### `07-launch-special-l6.jpg` / `07-launch-special-l6-ig.jpg`
 
-Neighbors keep asking us what we do differently.
+Wondering what we actually do?
 
-We watch your devices, block junk, and you talk to a real person here in the U.S. when something smells off.
+We watch the computers in your home, block threats and pick up the phone when something seems off. You talk to a real person in the U.S.
 
-Start your free cyber checkup here: https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=launch-special&utm_content=launch-special-l6
+Take the free 2-minute Cyber Checkup:
 
-### `07-launch-special-l7.jpg` / `07-launch-special-l7-ig.jpg`
+https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=launch-special&utm_content=launch-special-l6
 
-Still forwarding scam screenshots to your group chat?
-
-Forward them to us instead. That's what we're here for.
-
-Start your free cyber checkup here: https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=launch-special&utm_content=launch-special-l7
-
-### `07-launch-special-l8.jpg` / `07-launch-special-l8-ig.jpg`
-
-Launch specials come and go. Locked‑in pricing for 12 months doesn't have to.
-
-Founding Member rates are open now for Bakersfield and Memphis households.
-
-Start your free cyber checkup here: https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=launch-special&utm_content=launch-special-l8
-
-### `07-launch-special-l9.jpg` / `07-launch-special-l9-ig.jpg`
-
-Your home has a lock on the front door. Your router deserves the same energy.
-
-Start with a free checkup, then pick a plan that fits how your family actually uses the internet.
-
-Start your free cyber checkup here: https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=launch-special&utm_content=launch-special-l9
+#EveraCyber #HomeCybersecurity #CyberSafety
 
 ### `08-scam-quiz-5.jpg` / `08-scam-quiz-5-ig.jpg`
 
 Could you spot a fake delivery text before you tapped the link?
 
-Most folks miss one or two on our scam quiz the first time. It's a quick way to see what your household already knows.
+The free Cyber Checkup asks a few quick questions and shows where your household might be caught off guard.
 
-No grades, just practical examples from real cases we see.
+Take the free 2-minute Cyber Checkup:
 
-Take the scam awareness quiz here: https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=scam-quiz&utm_content=scam-quiz-5
+https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=scam-quiz&utm_content=scam-quiz-5
 
-## Cards to review (layout)
+#EveraCyber #HomeCybersecurity #CyberSafety
 
-- `01-free-checkup-6-new.jpg` — source `source/4x6/01 Free Cyber Checkup/6-new.png` — source_layout_vertical
-- `02-plans-pricing-1.jpg` — source `source/4x6/02 See Plans & Pricing/1.png` — source_layout_vertical
-- `02-plans-pricing-2.jpg` — source `source/4x6/02 See Plans & Pricing/2.png` — source_layout_vertical
-- `07-launch-special-l7.jpg` — source `source/4x6/07 Launch Special/L7.png` — source_layout_vertical
-- `07-launch-special-l8.jpg` — source `source/4x6/07 Launch Special/L8.png` — source_layout_vertical
-- `07-launch-special-l9.jpg` — source `source/4x6/07 Launch Special/L9.png` — source_layout_vertical
