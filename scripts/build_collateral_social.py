@@ -40,6 +40,7 @@ LOGO_TARGET_WIDTH = 500
 BODY_MIN_PX = 40
 CTA_MIN_PX = 40
 CTA_BAR_H = 76
+CTA_BAR_PAD = 48
 FOUNDING_ON_IMAGE = "Founding Member pricing for 12 months"
 
 SET_FOLDERS: list[tuple[str, str, str, str]] = [
@@ -160,6 +161,75 @@ def cta_display_text(cta_bar: str) -> str:
     if text.endswith(":"):
         text = text[:-1].strip()
     return text
+
+
+def cta_font_for_bar(is_portrait: bool) -> ImageFont.FreeTypeFont:
+    return ImageFont.truetype(FONT_BOLD, max(CTA_MIN_PX, 40))
+
+
+def cta_bar_lines(
+    draw: ImageDraw.ImageDraw,
+    text: str,
+    font: ImageFont.FreeTypeFont,
+    max_inner_w: float,
+) -> list[str]:
+    if draw.textlength(text, font=font) <= max_inner_w:
+        return [text]
+    words = text.split()
+    if len(words) < 2:
+        return [text]
+    for i in range(1, len(words)):
+        line1 = " ".join(words[:i])
+        line2 = " ".join(words[i:])
+        if draw.textlength(line1, font=font) <= max_inner_w and draw.textlength(line2, font=font) <= max_inner_w:
+            return [line1, line2]
+    wrapped = wrap_text(draw, text, font, int(max_inner_w))
+    if len(wrapped) <= 2:
+        return wrapped
+    return [wrapped[0], " ".join(wrapped[1:])]
+
+
+def assert_cta_fits_canvas(
+    canvas_w: int,
+    lines: list[str],
+    font: ImageFont.FreeTypeFont,
+    slug: str,
+    size_label: str,
+) -> None:
+    max_inner = canvas_w - 2 * CTA_BAR_PAD
+    probe = ImageDraw.Draw(Image.new("RGB", (1, 1)))
+    for line in lines:
+        if probe.textlength(line, font=font) > max_inner:
+            raise SystemExit(
+                f"CTA bar overflow on {slug} ({size_label}): line {line!r} exceeds "
+                f"{max_inner:.0f}px inner width (canvas {canvas_w}px, pad {CTA_BAR_PAD}px)"
+            )
+
+
+def draw_cta_bar(
+    canvas: Image.Image,
+    cta_bar: str,
+    slug: str,
+    size_label: str,
+) -> None:
+    w, h = canvas.size
+    draw = ImageDraw.Draw(canvas)
+    cta_text = cta_display_text(cta_bar)
+    cta_font = cta_font_for_bar(h > w)
+    max_inner = w - 2 * CTA_BAR_PAD
+    lines = cta_bar_lines(draw, cta_text, cta_font, max_inner)
+    assert_cta_fits_canvas(w, lines, cta_font, slug, size_label)
+
+    cta_h = CTA_BAR_H
+    if len(lines) > 1:
+        cta_h = max(CTA_BAR_H, int(cta_font.size * 1.15 * len(lines) + 20))
+    draw.rectangle((0, h - cta_h, w, h), fill=ORANGE)
+    line_h = int(cta_font.size * 1.12)
+    block_h = line_h * len(lines)
+    y0 = h - cta_h + (cta_h - block_h) // 2
+    for i, line in enumerate(lines):
+        tw = draw.textlength(line, font=cta_font)
+        draw.text(((w - tw) / 2, y0 + i * line_h), line, fill=WHITE, font=cta_font)
 
 
 def draw_phone_hero(size: tuple[int, int], caller_line: str, subtitle: str) -> Image.Image:
@@ -393,6 +463,7 @@ def render_card(
     content: CardContent,
     logo: Image.Image,
     size: tuple[int, int],
+    slug: str,
 ) -> Image.Image:
     w, h = size
     is_portrait = h > w
@@ -406,6 +477,7 @@ def render_card(
     cta_h = CTA_BAR_H
     text_top = header_h + 16
     text_bottom_limit = h - cta_h - 16
+    size_label = "portrait" if is_portrait else "square"
 
     headline_px = 52 if is_portrait else 46
     body_px = 42 if is_portrait else 40
@@ -477,11 +549,7 @@ def render_card(
     else:
         canvas.paste(draw_icons_hero(hero_size), (margin_x, hero_top))
 
-    cta_text = cta_display_text(content["cta_bar"])
-    draw.rectangle((0, h - cta_h, w, h), fill=ORANGE)
-    cta_font = ImageFont.truetype(FONT_BOLD, max(CTA_MIN_PX, 40 if not is_portrait else 40))
-    tw = draw.textlength(cta_text, font=cta_font)
-    draw.text(((w - tw) / 2, h - cta_h + (cta_h - cta_font.size) // 2 - 2), cta_text, fill=WHITE, font=cta_font)
+    draw_cta_bar(canvas, content["cta_bar"], slug, size_label)
     return canvas
 
 
@@ -584,8 +652,8 @@ def main() -> int:
         issues: list[str] = []
 
         try:
-            square = render_card(content, logo, SQUARE_SIZE)
-            portrait = render_card(content, logo, PORTRAIT_SIZE)
+            square = render_card(content, logo, SQUARE_SIZE, slug)
+            portrait = render_card(content, logo, PORTRAIT_SIZE, slug)
             square.save(OUT_DIR / square_name, "JPEG", quality=92, optimize=True)
             portrait.save(OUT_DIR / portrait_name, "JPEG", quality=92, optimize=True)
         except Exception as exc:  # noqa: BLE001

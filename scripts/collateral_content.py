@@ -70,7 +70,7 @@ def _card(
 
 START_CTA = "Start with the free 2-minute Cyber Checkup:"
 CHECKUP_CTA = "Take the free 2-minute Cyber Checkup:"
-BAK_CTA = "Bakersfield, take the free 2-minute Cyber Checkup:"
+BAK_CTA = "Bakersfield: free 2-minute Cyber Checkup:"
 MEM_CTA = "Memphis, take the free 2-minute Cyber Checkup:"
 
 FOUNDING_IMAGE = (
