@@ -326,9 +326,9 @@ BAKERSFIELD_SLUGS = frozenset(
 MEMPHIS_SLUGS = frozenset({"launch-special-l2-mem1"})
 
 SUGGESTED_SCHEDULE: dict[str, str] = {
-    "free-scam-guide-31": "2025-11-01",
-    "launch-special-l2-mem1": "2025-11-01",
-    "protect-mom-dad-36": "2025-11-15",
+    "free-scam-guide-31": "2026-11-01",
+    "launch-special-l2-mem1": "2026-11-01",
+    "protect-mom-dad-36": "2026-11-15",
 }
 
 
@@ -402,9 +402,9 @@ def main() -> None:
             continue
 
         for platform, image_file, note in (
-            ("facebook", square, "Square 1080×1080 — Facebook"),
-            ("tiktok", square, "Square 1080×1080 — TikTok"),
-            ("instagram", portrait, "Portrait 1080×1350 — Instagram"),
+            ("facebook", square, "Square 1080×1080, Facebook"),
+            ("tiktok", square, "Square 1080×1080, TikTok"),
+            ("instagram", portrait, "Portrait 1080×1350, Instagram"),
         ):
             cap = full_caption(slug, campaign, platform)
             rows.append(
