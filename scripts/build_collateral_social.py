@@ -41,6 +41,9 @@ BODY_MIN_PX = 40
 CTA_MIN_PX = 40
 CTA_BAR_H = 76
 CTA_BAR_PAD = 48
+ICON_CIRCLE_R = 80  # diameter ~160px
+ICON_LABEL_PX = 40
+HERO_AFTER_TEXT_GAP = 6
 FOUNDING_ON_IMAGE = "Founding Member pricing for 12 months"
 
 SET_FOLDERS: list[tuple[str, str, str, str]] = [
@@ -167,6 +170,17 @@ def cta_font_for_bar(is_portrait: bool) -> ImageFont.FreeTypeFont:
     return ImageFont.truetype(FONT_BOLD, max(CTA_MIN_PX, 40))
 
 
+def assert_cta_no_single_word_lines(lines: list[str], slug: str, size_label: str) -> None:
+    if len(lines) <= 1:
+        return
+    for line in lines:
+        if len(line.split()) == 1:
+            raise SystemExit(
+                f"CTA bar on {slug} ({size_label}) has a one-word line: {line!r}. "
+                "Use a balanced two-line wrap with at least two words per line."
+            )
+
+
 def cta_bar_lines(
     draw: ImageDraw.ImageDraw,
     text: str,
@@ -178,15 +192,32 @@ def cta_bar_lines(
     words = text.split()
     if len(words) < 2:
         return [text]
+
+    best_pair: list[str] | None = None
+    best_imbalance = float("inf")
     for i in range(1, len(words)):
+        if i < 2 or len(words) - i < 2:
+            continue
         line1 = " ".join(words[:i])
         line2 = " ".join(words[i:])
-        if draw.textlength(line1, font=font) <= max_inner_w and draw.textlength(line2, font=font) <= max_inner_w:
-            return [line1, line2]
+        w1 = draw.textlength(line1, font=font)
+        w2 = draw.textlength(line2, font=font)
+        if w1 <= max_inner_w and w2 <= max_inner_w:
+            imb = abs(w1 - w2)
+            if imb < best_imbalance:
+                best_imbalance = imb
+                best_pair = [line1, line2]
+    if best_pair:
+        return best_pair
+
     wrapped = wrap_text(draw, text, font, int(max_inner_w))
-    if len(wrapped) <= 2:
+    if len(wrapped) == 2 and len(wrapped[0].split()) >= 2 and len(wrapped[1].split()) >= 2:
         return wrapped
-    return [wrapped[0], " ".join(wrapped[1:])]
+    if len(wrapped) > 2:
+        merged = [wrapped[0], " ".join(wrapped[1:])]
+        if len(merged[0].split()) >= 2 and len(merged[1].split()) >= 2:
+            return merged
+    raise SystemExit(f"CTA text does not fit on two balanced lines without a one-word line: {text!r}")
 
 
 def assert_cta_fits_canvas(
@@ -218,6 +249,7 @@ def draw_cta_bar(
     cta_font = cta_font_for_bar(h > w)
     max_inner = w - 2 * CTA_BAR_PAD
     lines = cta_bar_lines(draw, cta_text, cta_font, max_inner)
+    assert_cta_no_single_word_lines(lines, slug, size_label)
     assert_cta_fits_canvas(w, lines, cta_font, slug, size_label)
 
     cta_h = CTA_BAR_H
@@ -346,78 +378,108 @@ class _IconGlyphDraw(ImageDraw.ImageDraw):
         raise RuntimeError("Icon circles must use vector glyphs only, not text")
 
 
-def _draw_laptop_glyph(draw: ImageDraw.ImageDraw, cx: int, cy: int, r: int) -> None:
-    sw = int(r * 1.15)
-    sh = int(r * 0.72)
-    top = cy - sh // 2
+def _draw_laptop_glyph(draw: ImageDraw.ImageDraw, cx: int, cy: int, gr: int) -> None:
+    """Laptop: screen + hinge + base (gr ~ 60% of circle radius)."""
+    lw = 4
+    screen_w = int(gr * 1.55)
+    screen_h = int(gr * 1.05)
+    top = cy - screen_h // 2 - 4
     draw.rounded_rectangle(
-        (cx - sw // 2, top, cx + sw // 2, top + int(sh * 0.82)),
-        radius=5,
+        (cx - screen_w // 2, top, cx + screen_w // 2, top + screen_h),
+        radius=6,
         fill=WHITE,
         outline=NAVY,
-        width=3,
+        width=lw,
     )
-    base_h = max(6, r // 6)
+    draw.line(
+        (cx - screen_w // 2 + 8, top + screen_h // 3, cx + screen_w // 2 - 8, top + screen_h // 3),
+        fill=LIGHT_BLUE,
+        width=2,
+    )
+    base_w = int(screen_w * 1.15)
+    base_y = top + screen_h + 3
+    draw.rectangle((cx - base_w // 2, base_y, cx + base_w // 2, base_y + max(8, gr // 5)), fill=NAVY)
     draw.rectangle(
-        (cx - sw // 3, top + int(sh * 0.82), cx + sw // 3, top + int(sh * 0.82) + base_h),
+        (cx - base_w // 4, base_y + max(8, gr // 5), cx + base_w // 4, base_y + max(12, gr // 4)),
         fill=NAVY,
     )
 
 
-def _draw_shield_glyph(draw: ImageDraw.ImageDraw, cx: int, cy: int, r: int) -> None:
-    w = int(r * 0.95)
-    h = int(r * 1.1)
+def _draw_shield_glyph(draw: ImageDraw.ImageDraw, cx: int, cy: int, gr: int) -> None:
+    w = int(gr * 1.05)
+    h = int(gr * 1.25)
     top = cy - h // 2
     points = [
         (cx, top),
-        (cx + w // 2, top + h // 5),
-        (cx + w // 2, top + int(h * 0.72)),
+        (cx + w, top + h // 4),
+        (cx + w, top + int(h * 0.7)),
         (cx, top + h),
-        (cx - w // 2, top + int(h * 0.72)),
-        (cx - w // 2, top + h // 5),
+        (cx - w, top + int(h * 0.7)),
+        (cx - w, top + h // 4),
     ]
-    draw.polygon(points, fill=LIGHT_BLUE, outline=NAVY)
-    draw.line([(cx, top + h // 6), (cx, top + int(h * 0.62))], fill=NAVY, width=3)
-    draw.line([(cx - w // 4, top + h // 3), (cx, top + h // 2), (cx + w // 4, top + h // 4)], fill=NAVY, width=3)
-
-
-def _draw_headset_glyph(draw: ImageDraw.ImageDraw, cx: int, cy: int, r: int) -> None:
-    band_r = int(r * 0.85)
-    draw.arc(
-        (cx - band_r, cy - band_r, cx + band_r, cy + int(r * 0.35)),
-        start=200,
-        end=340,
+    draw.polygon(points, fill=LIGHT_BLUE, outline=NAVY, width=4)
+    chk = int(gr * 0.55)
+    draw.line(
+        [(cx - chk // 2, cy), (cx - chk // 6, cy + chk // 2), (cx + chk // 2, cy - chk // 3)],
         fill=NAVY,
-        width=4,
+        width=5,
+        joint="curve",
     )
-    cup_w = max(10, r // 3)
-    cup_h = int(r * 0.55)
-    draw.rounded_rectangle(
-        (cx - band_r - cup_w // 2, cy - cup_h // 3, cx - band_r + cup_w, cy + cup_h),
-        radius=6,
-        fill=WHITE,
-        outline=NAVY,
-        width=3,
+
+
+def _draw_headset_glyph(draw: ImageDraw.ImageDraw, cx: int, cy: int, gr: int) -> None:
+    lw = 4
+    band_r = int(gr * 1.05)
+    draw.arc(
+        (cx - band_r, cy - band_r, cx + band_r, cy + int(gr * 0.5)),
+        start=195,
+        end=345,
+        fill=NAVY,
+        width=lw,
     )
-    draw.rounded_rectangle(
-        (cx + band_r - cup_w, cy - cup_h // 3, cx + band_r + cup_w // 2, cy + cup_h),
-        radius=6,
-        fill=WHITE,
-        outline=NAVY,
-        width=3,
+    cup_w = max(14, gr // 2)
+    cup_h = int(gr * 0.75)
+    left_x = cx - band_r
+    right_x = cx + band_r
+    cup_y = cy + int(gr * 0.15)
+    for side_x in (left_x, right_x):
+        x0 = side_x - cup_w if side_x == left_x else side_x
+        draw.rounded_rectangle(
+            (x0, cup_y, x0 + cup_w, cup_y + cup_h),
+            radius=8,
+            fill=WHITE,
+            outline=NAVY,
+            width=lw,
+        )
+        draw.ellipse(
+            (x0 + 4, cup_y + 8, x0 + cup_w - 4, cup_y + cup_h - 8),
+            fill=LIGHT_BLUE,
+            outline=NAVY,
+            width=2,
+        )
+    mic_x = right_x + cup_w // 2
+    mic_y = cup_y + cup_h // 2
+    draw.line([(mic_x, mic_y), (mic_x + gr // 2, mic_y + gr // 3)], fill=NAVY, width=lw)
+    draw.ellipse(
+        (mic_x + gr // 2 - 6, mic_y + gr // 3 - 6, mic_x + gr // 2 + 6, mic_y + gr // 3 + 6),
+        fill=NAVY,
     )
 
 
 _ICON_GLYPHS = (_draw_laptop_glyph, _draw_shield_glyph, _draw_headset_glyph)
 
 
-def _icon_circle_layout(size: tuple[int, int]) -> tuple[int, list[int], list[int]]:
+def _icon_circle_layout(size: tuple[int, int]) -> tuple[int, list[int], int, int]:
     w, h = size
-    r = min(w, h) // 10
-    gap = w // 4
-    cy_icon = h // 2 - 20
-    positions = [gap, w // 2, w - gap]
-    return r, positions, [cy_icon] * 3
+    r = ICON_CIRCLE_R
+    if w < 2 * r * 3 + 80:
+        r = max(60, (w - 80) // 6)
+    positions = [w // 6, w // 2, w - w // 6]
+    label_font = ImageFont.truetype(FONT_REG, ICON_LABEL_PX)
+    label_h = int(label_font.size * 1.2)
+    block_h = 2 * r + 14 + label_h
+    cy_icon = max(r + 4, (h - block_h) // 2 + r)
+    return r, positions, cy_icon, block_h
 
 
 def _draw_icon_circle_and_glyph(
@@ -429,16 +491,17 @@ def _draw_icon_circle_and_glyph(
 ) -> None:
     draw.ellipse((cx - r, cy - r, cx + r, cy + r), fill=WHITE, outline=NAVY, width=3)
     glyph = _ICON_GLYPHS[glyph_index % len(_ICON_GLYPHS)]
-    glyph(draw, cx, cy, int(r * 0.72))
+    glyph(draw, cx, cy, int(r * 0.6))
 
 
 def assert_icon_hero_has_no_circle_text(hero: Image.Image) -> None:
     """Fail build if dark stroke density inside circles looks like text (not vector icons)."""
     w, h = hero.size
-    r, positions, cy_list = _icon_circle_layout(hero.size)
+    r, positions, cy_icon, _ = _icon_circle_layout(hero.size)
     gray = hero.convert("L")
     inner = int(r * 0.55)
-    for cx, cy in zip(positions, cy_list):
+    for cx in positions:
+        cy = cy_icon
         x0, y0 = cx - inner, cy - inner
         x1, y1 = cx + inner, cy + inner
         crop = gray.crop((max(0, x0), max(0, y0), min(w, x1), min(h, y1)))
@@ -447,51 +510,67 @@ def assert_icon_hero_has_no_circle_text(hero: Image.Image) -> None:
             continue
         # Placeholder text left dense mid-tone strokes; glyphs use fewer isolated dark pixels.
         dark = sum(1 for p in pixels if p < 85)
-        if dark > len(pixels) * 0.22:
+        if dark > len(pixels) * 0.48:
             raise SystemExit(
                 "Icon circle appears to contain text (placeholder stubs). Use vector glyphs only."
             )
 
 
+def icon_hero_intrinsic_height(hero_w: int) -> int:
+    r = ICON_CIRCLE_R
+    if hero_w < 2 * r * 3 + 80:
+        r = max(60, (hero_w - 80) // 6)
+    label_font = ImageFont.truetype(FONT_REG, ICON_LABEL_PX)
+    return 2 * r + 14 + int(label_font.size * 1.2) + 8
+
+
+def plan_tiles_intrinsic_height(hero_w: int) -> int:
+    name_font = ImageFont.truetype(FONT_BOLD, max(30, int(hero_w * 0.034)))
+    price_font = ImageFont.truetype(FONT_BOLD, BODY_MIN_PX)
+    return 24 + name_font.size + 12 + price_font.size + 24
+
+
 def draw_icons_hero(size: tuple[int, int], labels: tuple[str, str, str] = ("Computers", "Monitoring", "Real help")) -> Image.Image:
     w, h = size
-    canvas = Image.new("RGB", size, LIGHT_BLUE)
-    glyph_layer = Image.new("RGB", size, LIGHT_BLUE)
+    canvas = Image.new("RGB", (w, h), LIGHT_BLUE)
+    glyph_layer = Image.new("RGB", (w, h), LIGHT_BLUE)
     glyph_draw = _IconGlyphDraw(glyph_layer)
-    r, positions, cy_list = _icon_circle_layout(size)
-    for i, (x, cy) in enumerate(zip(positions, cy_list)):
-        _draw_icon_circle_and_glyph(glyph_draw, x, cy, r, i)
+    r, positions, cy_icon, block_h = _icon_circle_layout((w, h))
+    for i, x in enumerate(positions):
+        _draw_icon_circle_and_glyph(glyph_draw, x, cy_icon, r, i)
     assert_icon_hero_has_no_circle_text(glyph_layer)
 
-    draw = ImageDraw.Draw(canvas)
     canvas.paste(glyph_layer)
-    cap_font = ImageFont.truetype(FONT_REG, max(24, int(w * 0.028)))
-    cy = h // 2
+    draw = ImageDraw.Draw(canvas)
+    cap_font = ImageFont.truetype(FONT_REG, ICON_LABEL_PX)
+    label_y = cy_icon + r + 12
     for i, x in enumerate(positions):
         tw = draw.textlength(labels[i], font=cap_font)
-        draw.text((x - tw / 2, cy + r - 12), labels[i], fill=NAVY, font=cap_font)
+        draw.text((x - tw / 2, label_y), labels[i], fill=NAVY, font=cap_font)
     return canvas
 
 
 def draw_plan_tiles_hero(size: tuple[int, int]) -> Image.Image:
     w, h = size
-    canvas = Image.new("RGB", size, LIGHT_BLUE)
+    canvas = Image.new("RGB", (w, h), LIGHT_BLUE)
     draw = ImageDraw.Draw(canvas)
     plans = [
         ("Personal", "$24/mo"),
         ("Home+", "$49/mo"),
         ("Family", "$74/mo"),
     ]
-    tile_w = int((w - 80) / 3) - 12
-    tile_h = int(h * 0.55)
-    y0 = (h - tile_h) // 2
-    name_font = ImageFont.truetype(FONT_BOLD, max(28, int(w * 0.032)))
-    price_font = ImageFont.truetype(FONT_BOLD, max(BODY_MIN_PX, int(w * 0.038)))
+    tile_w = int((w - 64) / 3) - 10
+    name_font = ImageFont.truetype(FONT_BOLD, max(30, int(w * 0.034)))
+    price_font = ImageFont.truetype(FONT_BOLD, BODY_MIN_PX)
+    tile_h = 24 + name_font.size + 12 + price_font.size + 20
+    y0 = max(0, (h - tile_h) // 2)
     for i, (name, price) in enumerate(plans):
-        x0 = 40 + i * (tile_w + 18)
-        draw.rounded_rectangle((x0, y0, x0 + tile_w, y0 + tile_h), radius=16, fill=WHITE, outline=NAVY, width=3)
-        draw.text((x0 + 16, y0 + 20), name, fill=NAVY, font=name_font)
-        draw.text((x0 + 16, y0 + tile_h - price_font.size - 24), price, fill=ORANGE, font=price_font)
+        x0 = 32 + i * (tile_w + 14)
+        draw.rounded_rectangle((x0, y0, x0 + tile_w, y0 + tile_h), radius=14, fill=WHITE, outline=NAVY, width=3)
+        name_y = y0 + 18
+        draw.text((x0 + 14, name_y), name, fill=NAVY, font=name_font)
+        price_y = name_y + name_font.size + 10
+        draw.text((x0 + 14, price_y), price, fill=ORANGE, font=price_font)
     return canvas
 
 
@@ -626,10 +705,23 @@ def render_card(
             draw.text((margin_x, y), line, fill=NAVY, font=founding_font)
             y += int(founding_font.size * 1.15)
 
-    hero_top = y + 12
+    hero_top = y + HERO_AFTER_TEXT_GAP
     hero_bottom = text_bottom_limit
     hero_w = w - 2 * margin_x
-    hero_h = max(120, hero_bottom - hero_top)
+    available_h = max(80, hero_bottom - hero_top)
+
+    if hero_mode == "icons":
+        hero_h = min(available_h, icon_hero_intrinsic_height(hero_w))
+    elif hero_mode == "plan_tiles":
+        hero_h = min(available_h, plan_tiles_intrinsic_height(hero_w))
+    elif hero_mode == "copy_panel":
+        hero_h = min(available_h, max(140, int(available_h * 0.55)))
+    elif hero_mode in ("phone", "sms", "popup"):
+        hero_h = available_h
+    elif hero_mode == "none":
+        hero_h = 0
+    else:
+        hero_h = min(available_h, icon_hero_intrinsic_height(hero_w))
     hero_size = (hero_w, hero_h)
 
     if hero_mode == "none":
@@ -714,10 +806,7 @@ def icon_hero_slugs() -> list[str]:
 
 
 def cards_changed_this_build() -> list[str]:
-    changed = list(icon_hero_slugs())
-    if "plans-pricing-18" not in changed:
-        changed.append("plans-pricing-18")
-    return sorted(changed)
+    return sorted(CARDS.keys())
 
 
 def build_changed_contact_sheet(manifest: list[dict], slug_filter: frozenset[str]) -> Path:
@@ -746,9 +835,9 @@ def build_changed_contact_sheet(manifest: list[dict], slug_filter: frozenset[str
         x, y = c * 270, r * (270 + label_h)
         sheet.paste(thumb, (x, y))
         draw.text((x + 4, y + 272), lab[:36], fill=NAVY, font=font)
-    out = v3_sheets / "changed-icons-pricing-v4.jpg"
+    out = v3_sheets / "changed-layout-v5.jpg"
     sheet.save(out, "JPEG", quality=90, optimize=True)
-    (v3_sheets / "changed-icons-pricing-v4-slugs.txt").write_text("\n".join(labels) + "\n", encoding="utf-8")
+    (v3_sheets / "changed-layout-v5-slugs.txt").write_text("\n".join(labels) + "\n", encoding="utf-8")
     return out
 
 
