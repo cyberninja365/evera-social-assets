@@ -1,7 +1,9 @@
 # Evera collateral social (marketing rebuild)
 
 Square JPGs are 1080×1080; Instagram portrait files use `-ig` before `.jpg` (1080×1350).
-Artwork is rebuilt from copy + photo crops (not mailer crops). Dropped cards removed.
+Artwork is rebuilt from `scripts/collateral_content.py` and `scripts/build_collateral_social.py` (designed layouts, no mailer art). Instagram and TikTok captions end with "Link in bio"; UTM links stay in the `link` column.
+
+Rebuild on a machine with `source/4x6/` mailer PNGs (gitignored) at the repo root, plus `brand/evera-logo-full-transparent.png`. Run `python3 scripts/build_collateral_social.py` then `python3 scripts/generate_collateral_posts.py`.
 
 ## Images and captions
 
@@ -9,7 +11,7 @@ Artwork is rebuilt from copy + photo crops (not mailer crops). Dropped cards rem
 
 Your antivirus icon is green. Does that mean the whole house is covered?
 
-Usually it means one piece is working. The free Cyber Checkup looks at the rest: your Wi-Fi, your devices and the common ways scams get in.
+Usually it means one piece is working. The free Cyber Checkup looks at the rest: your devices, your accounts and the common ways scams get in.
 
 Take the free 2-minute Cyber Checkup:
 
@@ -19,7 +21,7 @@ https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&u
 
 ### `01-free-checkup-4.jpg` / `01-free-checkup-4-ig.jpg`
 
-When did you last check on the Wi-Fi you set up years ago?
+When did you last check the devices everyone shares at home?
 
 The free Cyber Checkup shows where your devices and accounts might be exposed, in plain language, with a short list of what to fix first.
 
@@ -31,7 +33,7 @@ https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&u
 
 ### `01-free-checkup-9.jpg` / `01-free-checkup-9-ig.jpg`
 
-Kids on tablets, bills paid online, and a router blinking in the closet. Sound familiar?
+Kids on tablets, bills paid online, and passwords saved in too many places. Sound familiar?
 
 That's a lot of ways in for a scammer. The free Cyber Checkup walks through the basics and gives you simple next steps you can keep.
 
@@ -43,7 +45,7 @@ https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&u
 
 ### `02-plans-pricing-10-new.jpg` / `02-plans-pricing-10-new-ig.jpg`
 
-Businesses have someone watching their computers. Why shouldn't your family?
+Who watches the computers at your house when something looks off?
 
 Evera's team monitors your home computers, blocks threats and picks up the phone when something looks off. Plans start at $24/mo.
 
@@ -69,7 +71,7 @@ https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&u
 
 Homework, games, group chats. How much of your kids' day happens online now?
 
-We watch the family computers for threats and harmful sites, and you can call a real person when something seems wrong.
+We watch the family computers for threats and scams, and you can call a real person when something seems wrong.
 
 Take the free 2-minute Cyber Checkup:
 
@@ -93,7 +95,7 @@ https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&u
 
 Did your kid just get their first laptop?
 
-Set it up right from day one. Our team keeps an eye on it for threats and risky sites, and you get someone to call when you're not sure.
+Set it up right from day one. Our team keeps an eye on it for threats and scams, and you get someone to call when you're not sure.
 
 Take the free 2-minute Cyber Checkup:
 
@@ -103,9 +105,9 @@ https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&u
 
 ### `02-plans-pricing-15.jpg` / `02-plans-pricing-15-ig.jpg`
 
-Just moved in and hooked everything up to the new Wi-Fi?
+Just moved in and hooked up every device in the house?
 
-A move is a good time to change the router password, update every computer and check what's connected. The free Cyber Checkup tells you where to start.
+A move is a good time to update every computer and check what's connected. The free Cyber Checkup tells you where to start.
 
 Take the free 2-minute Cyber Checkup:
 
@@ -115,7 +117,7 @@ https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&u
 
 ### `02-plans-pricing-16-new.jpg` / `02-plans-pricing-16-new-ig.jpg`
 
-How many computers are on your Wi-Fi right now?
+How many computers are in your house right now?
 
 Each one is a way in for a scammer. Evera's team watches them for you, and Home+ covers a busy household for $49/mo (regular $59).
 
@@ -127,9 +129,9 @@ https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&u
 
 ### `02-plans-pricing-16.jpg` / `02-plans-pricing-16-ig.jpg`
 
-Heading out of town and planning to live on hotel Wi-Fi?
+Want extra protection beyond your home plan?
 
-Internet Protection is $14/mo and adds a layer when you're off your home network.
+Internet Protection is $14/mo and adds another layer our team manages for you.
 
 Start with the free 2-minute Cyber Checkup:
 
@@ -165,7 +167,7 @@ https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&u
 
 The dog counts on you. So do the kids and the computer everyone shares.
 
-Personal $24/mo (regular $29), Home+ $49/mo (regular $59), Family $74/mo (regular $89). Add-ons are an extra computer $15/mo, Internet Protection $14/mo, Remote Tech Support $49/mo and Identity Protection $19/mo, all monthly. We also have a limited-time Founding Member offer that locks in your pricing for the first 12 months.
+Personal $24/mo (regular $29), Home+ $49/mo (regular $59) and Family $74/mo (regular $89), all monthly. We also have a limited-time Founding Member offer that locks in your pricing for the first 12 months.
 
 Start with the free 2-minute Cyber Checkup:
 
@@ -177,7 +179,7 @@ https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&u
 
 Are your parents still calling you every time a pop-up appears?
 
-Evera gives them their own team to call, and we watch their computer for threats. Identity Protection is available for $19/mo.
+Evera gives them their own team to call, and we watch their computer for threats.
 
 Take the free 2-minute Cyber Checkup:
 
@@ -187,7 +189,7 @@ https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&u
 
 ### `02-plans-pricing-6.jpg` / `02-plans-pricing-6-ig.jpg`
 
-School, streaming, gaming and social media, all on the same Wi-Fi?
+School, streaming, gaming and social media, all on the computers in your house?
 
 We keep watch on the family computers and you get real people to call when something feels wrong. Personal starts at $24/mo (regular $29).
 
@@ -290,18 +292,6 @@ Give him a team that can clean it up and that he can call without feeling silly.
 Take the free 2-minute Cyber Checkup:
 
 https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=protect-mom-dad&utm_content=protect-mom-dad-20-new
-
-#EveraCyber #HomeCybersecurity #CyberSafety
-
-### `03-protect-mom-dad-20.jpg` / `03-protect-mom-dad-20-ig.jpg`
-
-Does the same scam text make the rounds on your street every few weeks?
-
-Teach your parents one rule: if someone wants control of the screen, hang up and call us.
-
-Take the free 2-minute Cyber Checkup:
-
-https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=protect-mom-dad&utm_content=protect-mom-dad-20
 
 #EveraCyber #HomeCybersecurity #CyberSafety
 
@@ -427,6 +417,8 @@ https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&u
 
 #EveraCyber #HomeCybersecurity #CyberSafety
 
+_Suggested schedule: 2026-11-02_
+
 ### `04-scam-help-24.jpg` / `04-scam-help-24-ig.jpg`
 
 Did "Microsoft" call to say your computer has a virus?
@@ -438,6 +430,8 @@ Take the free 2-minute Cyber Checkup:
 https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=scam-help&utm_content=scam-help-24
 
 #EveraCyber #HomeCybersecurity #CyberSafety
+
+_Suggested schedule: 2026-11-06_
 
 ### `04-scam-help-33.jpg` / `04-scam-help-33-ig.jpg`
 
@@ -499,6 +493,8 @@ https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&u
 
 #EveraCyber #HomeCybersecurity #CyberSafety
 
+_Suggested schedule: 2026-11-05_
+
 ### `05-free-scam-guide-28.jpg` / `05-free-scam-guide-28-ig.jpg`
 
 Would you know if a voice on the phone wasn't really your child?
@@ -510,6 +506,8 @@ Take the free 2-minute Cyber Checkup:
 https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&utm_campaign=free-scam-guide&utm_content=free-scam-guide-28
 
 #EveraCyber #HomeCybersecurity #CyberSafety
+
+_Suggested schedule: 2026-11-03_
 
 ### `05-free-scam-guide-29.jpg` / `05-free-scam-guide-29-ig.jpg`
 
@@ -621,11 +619,13 @@ https://www.everacyber.com/bakersfield?utm_source=facebook&utm_medium=social&utm
 
 #EveraCyber #HomeCybersecurity #KernCounty
 
+_Suggested schedule: 2026-11-04_
+
 ### `07-launch-special-l2-mem1.jpg` / `07-launch-special-l2-mem1-ig.jpg`
 
 Memphis, did another sketchy text show up on your phone today?
 
-Evera is now serving Memphis households. Personal $24/mo (regular $29), Home+ $49/mo (regular $59), Family $74/mo (regular $89), all monthly, with a limited-time Founding Member offer that locks in your pricing for the first 12 months.
+Evera is now serving Memphis households. Personal $24/mo, Home+ $49/mo and Family $74/mo, all monthly, with a limited-time Founding Member offer that locks in your pricing for the first 12 months.
 
 Take the free 2-minute Cyber Checkup:
 
@@ -651,7 +651,7 @@ https://www.everacyber.com/checkup-start?utm_source=facebook&utm_medium=social&u
 
 Tired of piecing together five different security subscriptions?
 
-Evera's team handles the monitoring, protection and support for you. Personal $24/mo (regular $29), Home+ $49/mo (regular $59), Family $74/mo (regular $89), with a limited-time Founding Member offer that locks in your pricing for the first 12 months.
+Evera's team handles the monitoring, protection and support for you. Personal $24/mo, Home+ $49/mo and Family $74/mo, with a limited-time Founding Member offer that locks in your pricing for the first 12 months.
 
 Start with the free 2-minute Cyber Checkup:
 

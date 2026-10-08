@@ -1,10 +1,10 @@
-"""Copy and layout metadata for kept PR #2 collateral cards (56 slugs)."""
+"""Copy and layout metadata for kept PR #2 collateral cards (55 slugs)."""
 
 from __future__ import annotations
 
 from typing import Literal, TypedDict
 
-HeroMode = Literal["photo", "phone", "none"]
+HeroMode = Literal["phone", "sms", "popup", "icons", "plan_tiles", "copy_panel", "none"]
 LinkGeo = Literal["bakersfield", "memphis"]
 
 
@@ -29,13 +29,15 @@ def _card(
     *,
     bullets: list[str] | None = None,
     cta_bar: str = "Take the free 2-minute Cyber Checkup:",
-    hero_mode: HeroMode = "photo",
+    hero_mode: HeroMode = "icons",
     pricing_line: str = "",
     founding_on_image: bool = False,
     link_geo: LinkGeo | None = None,
     image_lines: list[str] | None = None,
     phone_caller: str = "",
     phone_hint: str = "",
+    icon_labels: list[str] | None = None,
+    panel_lines: list[str] | None = None,
 ) -> CardContent:
     out: CardContent = {
         "set_id": set_id,
@@ -59,6 +61,10 @@ def _card(
         out["phone_caller"] = phone_caller
     if phone_hint:
         out["phone_hint"] = phone_hint
+    if icon_labels:
+        out["icon_labels"] = icon_labels
+    if panel_lines:
+        out["panel_lines"] = panel_lines
     return out
 
 
@@ -80,7 +86,7 @@ CARDS: dict[str, CardContent] = {
         "Your antivirus icon is green. Does that mean the whole house is covered?",
         bullets=[
             "Usually it means one piece is working. The free Cyber Checkup looks at the rest: "
-            "your Wi-Fi, your devices and the common ways scams get in."
+            "your devices, your accounts and the common ways scams get in."
         ],
         cta_bar=CHECKUP_CTA,
     ),
@@ -88,7 +94,7 @@ CARDS: dict[str, CardContent] = {
         "01",
         "free-cyber-checkup",
         "How healthy is your digital home?",
-        "When did you last check on the Wi-Fi you set up years ago?",
+        "When did you last check the devices everyone shares at home?",
         bullets=[
             "The free Cyber Checkup shows where your devices and accounts might be exposed, "
             "in plain language, with a short list of what to fix first."
@@ -99,7 +105,7 @@ CARDS: dict[str, CardContent] = {
         "01",
         "free-cyber-checkup",
         "Are you actually protected?",
-        "Kids on tablets, bills paid online, and a router blinking in the closet. Sound familiar?",
+        "Kids on tablets, bills paid online, and passwords saved in too many places. Sound familiar?",
         bullets=[
             "That's a lot of ways in for a scammer. The free Cyber Checkup walks through the basics "
             "and gives you simple next steps you can keep."
@@ -118,6 +124,7 @@ CARDS: dict[str, CardContent] = {
         ],
         cta_bar=START_CTA,
         pricing_line="Plans from $24/mo",
+        image_lines=["Your family deserves a team watching the computers at home."],
     ),
     "plans-pricing-11-new": _card(
         "02",
@@ -130,7 +137,7 @@ CARDS: dict[str, CardContent] = {
             + "."
         ],
         cta_bar=START_CTA,
-        pricing_line="Personal $24/mo (regular $29) · Home+ $49/mo (regular $59) · Family $74/mo (regular $89)",
+        pricing_line="Personal $24/mo · Home+ $49/mo · Family $74/mo",
         founding_on_image=True,
         image_lines=["Monthly plans for real households."],
     ),
@@ -140,7 +147,7 @@ CARDS: dict[str, CardContent] = {
         "Keep their world safer online.",
         "Homework, games, group chats. How much of your kids' day happens online now?",
         bullets=[
-            "We watch the family computers for threats and harmful sites, and you can call a real person "
+            "We watch the family computers for threats and scams, and you can call a real person "
             "when something seems wrong."
         ],
         cta_bar=CHECKUP_CTA,
@@ -162,7 +169,7 @@ CARDS: dict[str, CardContent] = {
         "A brighter childhood online.",
         "Did your kid just get their first laptop?",
         bullets=[
-            "Set it up right from day one. Our team keeps an eye on it for threats and risky sites, "
+            "Set it up right from day one. Our team keeps an eye on it for threats and scams, "
             "and you get someone to call when you're not sure."
         ],
         cta_bar=CHECKUP_CTA,
@@ -171,9 +178,9 @@ CARDS: dict[str, CardContent] = {
         "02",
         "plans-pricing",
         "New home. New risks.",
-        "Just moved in and hooked everything up to the new Wi-Fi?",
+        "Just moved in and hooked up every device in the house?",
         bullets=[
-            "A move is a good time to change the router password, update every computer and check what's connected. "
+            "A move is a good time to update every computer and check what's connected. "
             "The free Cyber Checkup tells you where to start."
         ],
         cta_bar=CHECKUP_CTA,
@@ -182,7 +189,7 @@ CARDS: dict[str, CardContent] = {
         "02",
         "plans-pricing",
         "Cybersecurity starts at home.",
-        "How many computers are on your Wi-Fi right now?",
+        "How many computers are in your house right now?",
         bullets=[
             "Each one is a way in for a scammer. Evera's team watches them for you, and Home+ covers a busy household for $49/mo."
         ],
@@ -193,8 +200,8 @@ CARDS: dict[str, CardContent] = {
         "02",
         "plans-pricing",
         "Taking a trip?|Keep your digital life protected.",
-        "Heading out of town and planning to live on hotel Wi-Fi?",
-        bullets=["Internet Protection is $14/mo and adds a layer when you're off your home network."],
+        "Want extra protection beyond your home plan?",
+        bullets=["Internet Protection is $14/mo and adds another layer our team manages for you."],
         cta_bar=START_CTA,
         pricing_line="Internet Protection $14/mo",
     ),
@@ -227,14 +234,13 @@ CARDS: dict[str, CardContent] = {
         "They count on you.|Keep them safe online too.",
         "The dog counts on you. So do the kids and the computer everyone shares.",
         bullets=[
-            "Personal $24/mo, Home+ $49/mo, Family $74/mo. Add-ons are an extra computer $15/mo, Internet Protection $14/mo, "
-            "Remote Tech Support $49/mo and Identity Protection $19/mo, all monthly. We also have a "
+            "Personal $24/mo, Home+ $49/mo and Family $74/mo, all monthly. We also have a "
             + FOUNDING_IMAGE
             + "."
         ],
         cta_bar=START_CTA,
-        hero_mode="none",
-        pricing_line="Personal $24 · Home+ $49 · Family $74/mo",
+        hero_mode="plan_tiles",
+        pricing_line="Personal $24/mo · Home+ $49/mo · Family $74/mo",
         founding_on_image=True,
     ),
     "plans-pricing-40": _card(
@@ -243,17 +249,16 @@ CARDS: dict[str, CardContent] = {
         "They took care of you.|Now you can help protect them.",
         "Are your parents still calling you every time a pop-up appears?",
         bullets=[
-            "Evera gives them their own team to call, and we watch their computer for threats. "
-            "Identity Protection is available for $19/mo."
+            "Evera gives them their own team to call, and we watch their computer for threats."
         ],
         cta_bar=CHECKUP_CTA,
-        pricing_line="Identity Protection $19/mo",
+        icon_labels=["Parents", "Support", "Peace"],
     ),
     "plans-pricing-6": _card(
         "02",
         "plans-pricing",
         "Help keep your family safer online.",
-        "School, streaming, gaming and social media, all on the same Wi-Fi?",
+        "School, streaming, gaming and social media, all on the computers in your house?",
         bullets=[
             "We keep watch on the family computers and you get real people to call when something feels wrong. "
             "Personal starts at $24/mo."
@@ -352,16 +357,6 @@ CARDS: dict[str, CardContent] = {
         ],
         cta_bar=CHECKUP_CTA,
     ),
-    "protect-mom-dad-20": _card(
-        "03",
-        "protect-mom-dad",
-        "Local homes. Stronger together.",
-        "Does the same scam text make the rounds on your street every few weeks?",
-        bullets=[
-            "Teach your parents one rule: if someone wants control of the screen, hang up and call us."
-        ],
-        cta_bar=CHECKUP_CTA,
-    ),
     "protect-mom-dad-21-new-dad": _card(
         "03",
         "protect-mom-dad",
@@ -398,7 +393,7 @@ CARDS: dict[str, CardContent] = {
     "protect-mom-dad-36": _card(
         "03",
         "protect-mom-dad",
-        "Protect what matters most.",
+        "A \"bank investigator\" wants gift cards?|It's a scam.",
         "Your parent's on the phone with a \"bank investigator\" who wants gift cards?",
         bullets=[
             "That's a scam every time. Save our number in their phone so they have someone to call before they buy anything."
@@ -487,7 +482,9 @@ CARDS: dict[str, CardContent] = {
         "Strange email, odd text or a pop-up you don't trust?",
         bullets=["Evera customers can send it to us and ask before they click. That one step stops a lot of trouble."],
         cta_bar=CHECKUP_CTA,
-        hero_mode="none",
+        hero_mode="popup",
+        phone_caller="Security warning",
+        phone_hint="Your computer may be infected. Call this number now.",
     ),
     "scam-help-34": _card(
         "04",
@@ -507,7 +504,9 @@ CARDS: dict[str, CardContent] = {
             "Those feelings are what scammers are after. Pause, and ask someone you trust before you pay, install anything or share a code."
         ],
         cta_bar=CHECKUP_CTA,
-        hero_mode="none",
+        hero_mode="popup",
+        phone_caller="Urgent message",
+        phone_hint="You have 10 minutes to respond before your account is closed.",
     ),
     # --- 05 Free Scam Guide ---
     "free-scam-guide-22": _card(
@@ -629,7 +628,12 @@ CARDS: dict[str, CardContent] = {
             "That's our job. We monitor your home computers and help when something looks off."
         ],
         cta_bar=CHECKUP_CTA,
-        hero_mode="none",
+        hero_mode="copy_panel",
+        panel_lines=[
+            "We monitor the computers in your home.",
+            "Our team blocks threats and answers the phone.",
+            "You talk to a real person in the U.S.",
+        ],
     ),
     "launch-special-l2-bak": _card(
         "07",
@@ -656,7 +660,7 @@ CARDS: dict[str, CardContent] = {
             + "."
         ],
         cta_bar=CHECKUP_CTA,
-        pricing_line="Personal $24 · Home+ $49 · Family $74/mo",
+        pricing_line="Personal $24/mo · Home+ $49/mo · Family $74/mo",
         founding_on_image=True,
         link_geo="memphis",
     ),
@@ -684,7 +688,7 @@ CARDS: dict[str, CardContent] = {
             + "."
         ],
         cta_bar=START_CTA,
-        pricing_line="Personal $24 · Home+ $49 · Family $74/mo",
+        pricing_line="Personal $24/mo · Home+ $49/mo · Family $74/mo",
         founding_on_image=True,
     ),
     "launch-special-l6": _card(
@@ -713,8 +717,8 @@ CARDS: dict[str, CardContent] = {
 
 
 PHONE_UI: dict[str, tuple[str, str]] = {
-    "free-scam-guide-22": ("Your Bank", "Caller ID can be faked. Hang up and call the number on your card."),
-    "scam-help-23-1": ("Fraud alert", "Suspicious charge detected. Was this you?"),
+    "free-scam-guide-22": ("Your Bank", "Fraud department, about your account."),
+    "scam-help-23-1": ("Fraud alert", "Suspicious charge detected. Was this you? Tap to confirm."),
     "scam-help-23-2": ("Account notice", "Your account has been locked. Verify now."),
     "scam-help-24": ("Tech support", "We detected a problem on your computer."),
     "scam-help-34": ("Utility company", "Shutoff scheduled unless you pay today."),
@@ -726,26 +730,45 @@ PHONE_UI: dict[str, tuple[str, str]] = {
     "free-scam-guide-30-2": ("Your Bank", "We already verified your name."),
     "free-scam-guide-31": ("Delivery", "Package on hold. Tap to update."),
     "protect-mom-dad-21-new-dad": ("Bank alert", "Compromised account. Read us the code."),
-    "protect-mom-dad-21-new-mom": ("Security alert", "Pop-up on your computer. Call now."),
+    "protect-mom-dad-21-new-mom": (
+        "Security warning",
+        "Your computer may be infected. Call this number now.",
+    ),
     "protect-mom-dad-36": ("Bank investigator", "Buy gift cards to secure funds."),
 }
+
+SMS_SLUGS = frozenset(
+    {
+        "scam-help-23-1",
+        "scam-help-23-2",
+        "free-scam-guide-27",
+        "free-scam-guide-31",
+    }
+)
+
+POPUP_SLUGS = frozenset({"protect-mom-dad-21-new-mom"})
 
 
 def get_card(slug: str) -> CardContent:
     if slug not in CARDS:
         raise KeyError(f"Unknown collateral slug: {slug}")
     c: CardContent = dict(CARDS[slug])
+    if slug in SMS_SLUGS:
+        c["hero_mode"] = "sms"
+    elif slug in POPUP_SLUGS:
+        c["hero_mode"] = "popup"
     sub = c.get("subhead", "")
     if "image_lines" not in c:
         lines: list[str] = []
         if sub and len(sub) <= 95:
             lines.append(sub)
-        elif c.get("hero_mode") == "none":
+        elif c.get("hero_mode") in ("none", "copy_panel", "plan_tiles"):
             for bullet in c.get("bullets", [])[:2]:
                 if len(bullet) <= 120:
                     lines.append(bullet)
         c["image_lines"] = lines
-    if c.get("hero_mode") == "phone":
+    mode = c.get("hero_mode", "icons")
+    if mode in ("phone", "sms", "popup"):
         caller, hint = PHONE_UI.get(slug, ("Unknown caller", "Hang up if it feels rushed or scary."))
         c.setdefault("phone_caller", caller)
         c.setdefault("phone_hint", hint)

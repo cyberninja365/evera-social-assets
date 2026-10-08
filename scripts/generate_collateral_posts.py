@@ -26,24 +26,24 @@ FOUNDING_PHRASE = (
 CAPTION_BODIES: dict[str, str] = {
     "free-checkup-18-new": (
         "Your antivirus icon is green. Does that mean the whole house is covered?\n\n"
-        "Usually it means one piece is working. The free Cyber Checkup looks at the rest: your Wi-Fi, "
-        "your devices and the common ways scams get in.\n\n"
+        "Usually it means one piece is working. The free Cyber Checkup looks at the rest: your devices, "
+        "your accounts and the common ways scams get in.\n\n"
         "Take the free 2-minute Cyber Checkup:"
     ),
     "free-checkup-4": (
-        "When did you last check on the Wi-Fi you set up years ago?\n\n"
+        "When did you last check the devices everyone shares at home?\n\n"
         "The free Cyber Checkup shows where your devices and accounts might be exposed, in plain language, "
         "with a short list of what to fix first.\n\n"
         "Take the free 2-minute Cyber Checkup:"
     ),
     "free-checkup-9": (
-        "Kids on tablets, bills paid online, and a router blinking in the closet. Sound familiar?\n\n"
+        "Kids on tablets, bills paid online, and passwords saved in too many places. Sound familiar?\n\n"
         "That's a lot of ways in for a scammer. The free Cyber Checkup walks through the basics and gives you "
         "simple next steps you can keep.\n\n"
         "Take the free 2-minute Cyber Checkup:"
     ),
     "plans-pricing-10-new": (
-        "Businesses have someone watching their computers. Why shouldn't your family?\n\n"
+        "Who watches the computers at your house when something looks off?\n\n"
         "Evera's team monitors your home computers, blocks threats and picks up the phone when something looks off. "
         "Plans start at $24/mo.\n\n"
         "Start with the free 2-minute Cyber Checkup:"
@@ -56,7 +56,7 @@ CAPTION_BODIES: dict[str, str] = {
     ),
     "plans-pricing-11": (
         "Homework, games, group chats. How much of your kids' day happens online now?\n\n"
-        "We watch the family computers for threats and harmful sites, and you can call a real person when something seems wrong.\n\n"
+        "We watch the family computers for threats and scams, and you can call a real person when something seems wrong.\n\n"
         "Take the free 2-minute Cyber Checkup:"
     ),
     "plans-pricing-12": (
@@ -66,23 +66,23 @@ CAPTION_BODIES: dict[str, str] = {
     ),
     "plans-pricing-15-new": (
         "Did your kid just get their first laptop?\n\n"
-        "Set it up right from day one. Our team keeps an eye on it for threats and risky sites, and you get someone to call when you're not sure.\n\n"
+        "Set it up right from day one. Our team keeps an eye on it for threats and scams, and you get someone to call when you're not sure.\n\n"
         "Take the free 2-minute Cyber Checkup:"
     ),
     "plans-pricing-15": (
-        "Just moved in and hooked everything up to the new Wi-Fi?\n\n"
-        "A move is a good time to change the router password, update every computer and check what's connected. "
+        "Just moved in and hooked up every device in the house?\n\n"
+        "A move is a good time to update every computer and check what's connected. "
         "The free Cyber Checkup tells you where to start.\n\n"
         "Take the free 2-minute Cyber Checkup:"
     ),
     "plans-pricing-16-new": (
-        "How many computers are on your Wi-Fi right now?\n\n"
+        "How many computers are in your house right now?\n\n"
         "Each one is a way in for a scammer. Evera's team watches them for you, and Home+ covers a busy household for $49/mo (regular $59).\n\n"
         "Start with the free 2-minute Cyber Checkup:"
     ),
     "plans-pricing-16": (
-        "Heading out of town and planning to live on hotel Wi-Fi?\n\n"
-        "Internet Protection is $14/mo and adds a layer when you're off your home network.\n\n"
+        "Want extra protection beyond your home plan?\n\n"
+        "Internet Protection is $14/mo and adds another layer our team manages for you.\n\n"
         "Start with the free 2-minute Cyber Checkup:"
     ),
     "plans-pricing-17-new": (
@@ -97,18 +97,17 @@ CAPTION_BODIES: dict[str, str] = {
     ),
     "plans-pricing-18": (
         "The dog counts on you. So do the kids and the computer everyone shares.\n\n"
-        "Personal $24/mo (regular $29), Home+ $49/mo (regular $59), Family $74/mo (regular $89). Add-ons are an extra computer $15/mo, "
-        "Internet Protection $14/mo, Remote Tech Support $49/mo and Identity Protection $19/mo, all monthly. "
+        "Personal $24/mo (regular $29), Home+ $49/mo (regular $59) and Family $74/mo (regular $89), all monthly. "
         f"We also have a {FOUNDING_PHRASE}.\n\n"
         "Start with the free 2-minute Cyber Checkup:"
     ),
     "plans-pricing-40": (
         "Are your parents still calling you every time a pop-up appears?\n\n"
-        "Evera gives them their own team to call, and we watch their computer for threats. Identity Protection is available for $19/mo.\n\n"
+        "Evera gives them their own team to call, and we watch their computer for threats.\n\n"
         "Take the free 2-minute Cyber Checkup:"
     ),
     "plans-pricing-6": (
-        "School, streaming, gaming and social media, all on the same Wi-Fi?\n\n"
+        "School, streaming, gaming and social media, all on the computers in your house?\n\n"
         "We keep watch on the family computers and you get real people to call when something feels wrong. Personal starts at $24/mo (regular $29).\n\n"
         "Take the free 2-minute Cyber Checkup:"
     ),
@@ -151,11 +150,6 @@ CAPTION_BODIES: dict[str, str] = {
     "protect-mom-dad-20-new": (
         "Dad fixed the printer himself and installed three toolbars along the way?\n\n"
         "Give him a team that can clean it up and that he can call without feeling silly.\n\n"
-        "Take the free 2-minute Cyber Checkup:"
-    ),
-    "protect-mom-dad-20": (
-        "Does the same scam text make the rounds on your street every few weeks?\n\n"
-        "Teach your parents one rule: if someone wants control of the screen, hang up and call us.\n\n"
         "Take the free 2-minute Cyber Checkup:"
     ),
     "protect-mom-dad-21-new-dad": (
@@ -290,7 +284,7 @@ CAPTION_BODIES: dict[str, str] = {
     ),
     "launch-special-l2-mem1": (
         "Memphis, did another sketchy text show up on your phone today?\n\n"
-        f"Evera is now serving Memphis households. Personal $24/mo (regular $29), Home+ $49/mo (regular $59), Family $74/mo (regular $89), all monthly, with a {FOUNDING_PHRASE}.\n\n"
+        f"Evera is now serving Memphis households. Personal $24/mo, Home+ $49/mo and Family $74/mo, all monthly, with a {FOUNDING_PHRASE}.\n\n"
         "Take the free 2-minute Cyber Checkup:"
     ),
     "launch-special-l4": (
@@ -300,7 +294,7 @@ CAPTION_BODIES: dict[str, str] = {
     ),
     "launch-special-l5": (
         "Tired of piecing together five different security subscriptions?\n\n"
-        f"Evera's team handles the monitoring, protection and support for you. Personal $24/mo (regular $29), Home+ $49/mo (regular $59), Family $74/mo (regular $89), with a {FOUNDING_PHRASE}.\n\n"
+        f"Evera's team handles the monitoring, protection and support for you. Personal $24/mo, Home+ $49/mo and Family $74/mo, with a {FOUNDING_PHRASE}.\n\n"
         "Start with the free 2-minute Cyber Checkup:"
     ),
     "launch-special-l6": (
@@ -329,6 +323,11 @@ SUGGESTED_SCHEDULE: dict[str, str] = {
     "free-scam-guide-31": "2026-11-01",
     "launch-special-l2-mem1": "2026-11-01",
     "protect-mom-dad-36": "2026-11-15",
+    "scam-help-23-2": "2026-11-02",
+    "free-scam-guide-28": "2026-11-03",
+    "launch-special-l2-bak": "2026-11-04",
+    "free-scam-guide-27": "2026-11-05",
+    "scam-help-24": "2026-11-06",
 }
 
 
@@ -371,6 +370,8 @@ def caption_body(slug: str) -> str:
 
 def full_caption(slug: str, campaign: str, platform: str) -> str:
     body = caption_body(slug)
+    if platform in ("instagram", "tiktok"):
+        return f"{body}\n\nLink in bio"
     url = build_link(slug, campaign, platform)
     return f"{body}\n\n{url}"
 
@@ -387,7 +388,12 @@ def main() -> None:
     readme_parts = [
         "# Evera collateral social (marketing rebuild)\n\n",
         "Square JPGs are 1080×1080; Instagram portrait files use `-ig` before `.jpg` (1080×1350).\n",
-        "Artwork is rebuilt from copy + photo crops (not mailer crops). Dropped cards removed.\n\n",
+        "Artwork is rebuilt from `scripts/collateral_content.py` and `scripts/build_collateral_social.py` "
+        "(designed layouts, no mailer art). Instagram and TikTok captions end with \"Link in bio\"; "
+        "UTM links stay in the `link` column.\n\n",
+        "Rebuild on a machine with `source/4x6/` mailer PNGs (gitignored) at the repo root, "
+        "plus `brand/evera-logo-full-transparent.png`. Run `python3 scripts/build_collateral_social.py` "
+        "then `python3 scripts/generate_collateral_posts.py`.\n\n",
         "## Images and captions\n\n",
     ]
 

@@ -4,6 +4,7 @@ from __future__ import annotations
 
 # Square JPG basename without extension (set-slug)
 DROP_OUTPUT_BASENAMES = {
+    "03-protect-mom-dad-20",
     "01-free-checkup-6-new",
     "01-free-checkup-13",
     "02-plans-pricing-1",

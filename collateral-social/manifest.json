@@ -217,15 +217,6 @@
   },
   {
     "set": "03",
-    "source_file": "source/4x6/03 Protect Mom & Dad/20.png",
-    "slug": "protect-mom-dad-20",
-    "campaign": "protect-mom-dad",
-    "output_square": "03-protect-mom-dad-20.jpg",
-    "output_portrait": "03-protect-mom-dad-20-ig.jpg",
-    "issues": []
-  },
-  {
-    "set": "03",
     "source_file": "source/4x6/03 Protect Mom & Dad/21-new-dad.png",
     "slug": "protect-mom-dad-21-new-dad",
     "campaign": "protect-mom-dad",
