@@ -132,12 +132,12 @@ CARDS: dict[str, CardContent] = {
         "Serious protection doesn't have to cost a fortune.",
         "Think real protection for the house costs a fortune?",
         bullets=[
-            "Personal is $24/mo, Home+ is $49/mo and Family is $74/mo, all monthly. Right now we also have a "
+            "Personal is $24/mo, Home+ is $49/mo and Family is $79/mo, all monthly. Right now we also have a "
             + FOUNDING_IMAGE
             + "."
         ],
         cta_bar=START_CTA,
-        pricing_line="Personal $24/mo · Home+ $49/mo · Family $74/mo",
+        pricing_line="Personal $24/mo · Home+ $49/mo · Family $79/mo",
         founding_on_image=True,
         image_lines=["Monthly plans for real households."],
     ),
@@ -234,7 +234,7 @@ CARDS: dict[str, CardContent] = {
         "They count on you.|Keep them safe online too.",
         "Your kids, your parents, the computer everyone shares. We watch over all of it.",
         bullets=[
-            "Personal $24/mo, Home+ $49/mo and Family $74/mo, all monthly. We also have a "
+            "Personal $24/mo, Home+ $49/mo and Family $79/mo, all monthly. We also have a "
             + FOUNDING_IMAGE
             + "."
         ],
@@ -296,12 +296,12 @@ CARDS: dict[str, CardContent] = {
         "Everything connected.|Better protected.",
         "Grandma's laptop, your work computer and the gaming PC in the back room. Who's watching all of them?",
         bullets=[
-            "Family is $74/mo and covers the whole house. We also have a "
+            "Family is $79/mo and covers the whole house. We also have a "
             + FOUNDING_IMAGE
             + "."
         ],
         cta_bar=START_CTA,
-        pricing_line="Family $74/mo",
+        pricing_line="Family $79/mo",
         founding_on_image=True,
     ),
     # --- 03 Protect Mom & Dad ---
@@ -654,12 +654,12 @@ CARDS: dict[str, CardContent] = {
         "Memphis, meet Evera.",
         "Memphis, did another sketchy text show up on your phone today?",
         bullets=[
-            "Evera is now serving Memphis households. Personal $24/mo, Home+ $49/mo, Family $74/mo, all monthly, with a "
+            "Evera is now serving Memphis households. Personal $24/mo, Home+ $49/mo, Family $79/mo, all monthly, with a "
             + FOUNDING_IMAGE
             + "."
         ],
         cta_bar=CHECKUP_CTA,
-        pricing_line="Personal $24/mo · Home+ $49/mo · Family $74/mo",
+        pricing_line="Personal $24/mo · Home+ $49/mo · Family $79/mo",
         founding_on_image=True,
         link_geo="memphis",
     ),
@@ -682,12 +682,12 @@ CARDS: dict[str, CardContent] = {
         "It's more than just antivirus.",
         "Tired of piecing together five different security subscriptions?",
         bullets=[
-            "Evera's team handles the monitoring, protection and support for you. Personal $24/mo, Home+ $49/mo, Family $74/mo, with a "
+            "Evera's team handles the monitoring, protection and support for you. Personal $24/mo, Home+ $49/mo, Family $79/mo, with a "
             + FOUNDING_IMAGE
             + "."
         ],
         cta_bar=START_CTA,
-        pricing_line="Personal $24/mo · Home+ $49/mo · Family $74/mo",
+        pricing_line="Personal $24/mo · Home+ $49/mo · Family $79/mo",
         founding_on_image=True,
     ),
     "launch-special-l6": _card(

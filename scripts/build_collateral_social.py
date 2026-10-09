@@ -567,7 +567,7 @@ def draw_plan_tiles_hero(size: tuple[int, int], scale: float = 1.0) -> Image.Ima
     plans = [
         ("Personal", "$24/mo"),
         ("Home+", "$49/mo"),
-        ("Family", "$74/mo"),
+        ("Family", "$79/mo"),
     ]
     sc = max(1.0, min(scale, 1.45))
     tile_w = int((w - 64) / 3) - 10
@@ -611,7 +611,7 @@ def draw_pricing_lines(
     font: ImageFont.FreeTypeFont,
 ) -> int:
     """Render pricing with wrap; split on middle dots if needed."""
-    pricing = pricing.replace("(regular $29)", "").replace("(regular $59)", "").replace("(regular $89)", "")
+    pricing = pricing.replace("(regular $29)", "").replace("(regular $59)", "").replace("(regular $99)", "")
     pricing = re.sub(r"\s+", " ", pricing).strip()
     segments = [s.strip() for s in re.split(r"[·]", pricing) if s.strip()]
     if not segments:
